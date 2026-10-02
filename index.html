@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cecile Roca · UX Architect &amp; Researcher, New York</title>
+<meta name="description" content="Cecile Roca is a UX architect and researcher in New York, designing enterprise and AI products and immersive physical experiences.">
+<meta property="og:title" content="Cecile Roca · UX Architect &amp; Researcher, New York">
+<meta property="og:description" content="UX architecture and research for enterprise and AI products and immersive physical experiences.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.cecileroca.com/">
+<meta property="og:image" content="https://www.cecileroca.com/assets/portrait-hero-hd.jpg">
+<link rel="canonical" href="https://www.cecileroca.com/">
+<script src="./vendor/react.production.min.js"></script>
+<script src="./vendor/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@300;400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="cases.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+html,body{margin:0;padding:0;background:#F4F1EA;color:#16150F;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#16150F;text-decoration:none}
+a:hover{color:#BD431B}
+::selection{background:#BD431B;color:#F4F1EA}
+main:focus{outline:none}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+:focus-visible{outline:2px solid #BD431B;outline-offset:3px}
+</style>
+</helmet>
+
+<div style="font-family:'Geist',system-ui,sans-serif;background:#F4F1EA;color:#16150F;min-height:100vh">
+<a href="#main" onClick="{{ skipMain }}" style="position:fixed;left:12px;top:12px;z-index:100;transform:translateY(-200%);background:#16150F;color:#F4F1EA;padding:12px 20px;border-radius:999px;font-size:15px;transition:transform .2s" style-focus="transform:none">Skip to content</a>
+<div id="cr-progress" style="position:fixed;top:0;left:0;right:0;height:3px;background:#BD431B;transform-origin:0 50%;transform:scaleX(0);z-index:40"></div>
+
+<header style="position:sticky;top:0;z-index:30;background:rgba(14,13,10,0.88);backdrop-filter:blur(10px);border-bottom:1px solid #2A2821;color:#F4F1EA">
+  <div style="max-width:1440px;margin:0 auto;padding:14px clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <div onClick="{{ goHome }}" onKeyDown="{{ keyAct }}" role="link" tabindex="0" aria-label="Cecile Roca, home" style="display:flex;align-items:baseline;gap:12px;cursor:pointer;min-height:24px;opacity:{{ brandO }};transform:{{ brandT }};pointer-events:{{ brandPE }};transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.2,1)">
+      <span style="font-family:'Instrument Serif',serif;font-size:24px;line-height:1;white-space:nowrap">Cecile Roca</span>
+      <span style="font-family:'Geist Mono',monospace;font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:#A8A294;white-space:nowrap">UX Architect-Researcher · NYC</span>
+    </div>
+    <nav aria-label="Primary" style="display:flex;gap:clamp(16px,3vw,26px);font-size:14px;flex-wrap:wrap;align-items:center">
+      <a href="#index" onClick="{{ goIndex }}" style="color:#F4F1EA;transition:color .2s" style-hover="color:#E8764F">Work</a>
+      <a href="#about" onClick="{{ goAbout }}" style="color:#F4F1EA;transition:color .2s" style-hover="color:#E8764F">About</a>
+      <a href="#contact" onClick="{{ goContact }}" style="color:#F4F1EA;transition:color .2s" style-hover="color:#E8764F">Contact</a>
+      <a href="assets/Cecile-Roca-Resume.pdf" target="_blank" style="padding:7px 15px;border:1px solid #6E685B;border-radius:999px;white-space:nowrap;color:#F4F1EA;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="border-color:#F4F1EA;background:#F4F1EA;color:#16150F" style-active="transform:scale(0.97)">Résumé ↗</a>
+    </nav>
+  </div>
+</header>
+
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<main id="main" tabindex="-1">
+<section data-screen-label="Cover" onMouseMove="{{ coverMove }}" onMouseLeave="{{ coverLeave }}" style="background:#0E0D0A;color:#F4F1EA;position:relative;display:flex;min-height:max(640px,calc(100vh - 57px));overflow:hidden;isolation:isolate">
+  <div style="position:absolute;inset:0;background:#0E0D0A;clip-path:{{ coverClip }};transition:clip-path 1.4s cubic-bezier(.7,0,.2,1)">
+    <sc-if value="{{ heroWide }}" hint-placeholder-val="{{ true }}"><img id="cr-portrait-img" src="assets/portrait-hero-hd.jpg" alt="Portrait of Cecile Roca" style="position:absolute;right:0;bottom:0;width:auto;height:auto;max-width:min(976px,{{ heroImgW }});max-height:100%;display:block;filter:grayscale(1) contrast(1.25) brightness(0.9);mix-blend-mode:lighten;transition:transform .7s cubic-bezier(.2,.8,.2,1)"></sc-if>
+  </div>
+  <div id="cr-glow" style="position:absolute;left:0;top:0;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(232,118,79,0.18) 0%,rgba(232,118,79,0.06) 35%,rgba(232,118,79,0) 62%);pointer-events:none;z-index:1;opacity:0;transition:opacity .6s ease,transform .55s cubic-bezier(.2,.8,.2,1);mix-blend-mode:screen"></div>
+  <div style="position:relative;z-index:2;flex:1;width:100%;max-width:1440px;margin:0 auto;padding:clamp(24px,3.4vw,44px) clamp(20px,4vw,48px) clamp(32px,4.4vw,60px);display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+    <div style="display:flex;flex-direction:column">
+    <h1 id="cr-hero-name" style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(52px,8.4vw,140px);line-height:0.9;letter-spacing:-0.035em;color:#F4F1EA;display:flex;gap:0.2em;white-space:nowrap;opacity:{{ heroNameO }};transform:{{ heroNameT }};transform-origin:0 0">
+      <span style="display:block;overflow:hidden;padding-bottom:0.04em"><span style="display:block;transform:{{ nameT1 }};transition:transform 1.2s cubic-bezier(.2,.8,.2,1) .25s">Cecile</span></span>
+      <span style="display:block;overflow:hidden;padding-bottom:0.06em"><span style="display:block;transform:{{ nameT2 }};transition:transform 1.2s cubic-bezier(.2,.8,.2,1) .4s">Roca</span></span>
+    </h1>
+      <div data-in="line:900" style="width:56px;height:2px;background:#E8764F;margin-top:clamp(2px,0.4vw,6px);transform-origin:0 50%;opacity:{{ heroNameO }}"></div>
+      <div data-in="rise:1050" style="display:flex;flex-direction:column;gap:6px;margin-top:clamp(14px,1.6vw,22px);font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#BDB6A6;opacity:{{ heroNameO }}">
+        <span style="display:flex;gap:10px;align-items:center"><span style="width:7px;height:7px;border-radius:50%;background:#E8764F"></span>UX Architect &amp; Researcher, New York</span>
+        <span style="padding-left:17px">Now: AI &amp; financial platforms at Synechron</span>
+      </div>
+    </div>
+    <sc-if value="{{ heroNarrow }}" hint-placeholder-val="{{ false }}"><img src="assets/portrait-hero-hd.jpg" alt="Portrait of Cecile Roca" style="display:block;align-self:center;width:calc(100% + 40px);max-width:600px;height:auto;margin:-24px -20px -20px;filter:grayscale(1) contrast(1.25) brightness(0.9);mix-blend-mode:lighten;opacity:{{ heroNameO }};transition:opacity 1s ease .6s"></sc-if>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:clamp(20px,2.2vw,28px);max-width:640px;flex:1 1 420px">
+        <p data-in="rise:1200" style="margin:0;font-family:'Instrument Serif',serif;font-size:clamp(40px,4.4vw,68px);line-height:1;letter-spacing:-0.015em;text-wrap:balance">Taking chaos to funded to <em style="color:#E8764F;position:relative;display:inline-block">shipped.<span data-in="line:1950" style="position:absolute;left:0.04em;right:0.28em;bottom:0.04em;height:3px;border-radius:2px;background:#E8764F;transform-origin:0 50%"></span></em></p>
+        <p data-in="rise:1350" style="margin:0;font-size:17px;line-height:1.6;color:#CFC9BB;max-width:470px;text-wrap:pretty">Law, business, museums, now enterprise AI. Every room started as chaos, and every one ended the same way: structure found, room won over, work built.</p>
+      </div>
+      <div style="display:flex;align-items:flex-end;gap:clamp(24px,4vw,64px);margin-left:auto">
+        <span data-in="rise:1500" style="display:flex;flex:none"><span id="cr-magnet" style="position:relative;display:flex;transition:transform .4s cubic-bezier(.2,.8,.2,1)"><span data-pulse="1" style="position:absolute;inset:0;border-radius:50%;border:1.5px solid #E8764F;pointer-events:none"></span><a href="#throughline" onClick="{{ goThrough }}" aria-label="See the approach" style="flex:none;width:64px;height:64px;border-radius:50%;background:#F4F1EA;color:#16150F;display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1;transition:background .2s,transform .2s" style-hover="background:#E8764F;transform:translateY(3px)">↓</a></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="throughline" data-screen-label="Throughline" style="position:relative;height:280vh;border-top:1px solid #D9D3C5;margin-top:clamp(24px,3vw,40px)">
+  <div style="position:sticky;top:57px;height:calc(100vh - 57px);display:flex;align-items:center">
+    <div style="max-width:1320px;width:100%;margin:0 auto;padding:24px clamp(20px,4vw,48px);display:grid;grid-template-columns:{{ coverCols }};gap:clamp(20px,5vw,72px);align-items:center">
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#BD431B">The throughline</span>
+        <div style="display:grid">
+          <p style="grid-area:1/1;margin:0;font-family:'Instrument Serif',serif;font-size:clamp(36px,4.4vw,64px);line-height:1.02;letter-spacing:-0.01em;opacity:{{ t1o }};transform:{{ t1t }};transition:opacity .3s,transform .3s">Tangled systems, brought to <em style="color:#BD431B">order.</em></p>
+          <p style="grid-area:1/1;margin:0;font-family:'Instrument Serif',serif;font-size:clamp(36px,4.4vw,64px);line-height:1.02;letter-spacing:-0.01em;opacity:{{ t2o }};transform:{{ t2t }};transition:opacity .3s,transform .3s">Untangling high-stakes, regulated platforms.</p>
+          <p style="grid-area:1/1;margin:0;font-family:'Instrument Serif',serif;font-size:clamp(36px,4.4vw,64px);line-height:1.02;letter-spacing:-0.01em;opacity:{{ t3o }};transform:{{ t3t }};transition:opacity .3s,transform .3s">Mapping how people actually work, validating fast, and designing the structure <em style="color:#BD431B">underneath the screens.</em></p>
+        </div>
+        <div style="display:flex;gap:6px;align-items:center">
+          <sc-for list="{{ dashes }}" as="d" hint-placeholder-count="3">
+            <span style="height:3px;width:{{ d.w }};background:{{ d.c }};border-radius:2px;transition:width .3s,background .3s"></span>
+          </sc-for>
+          <span style="margin-left:10px;font-family:'Geist Mono',monospace;font-size:11px;color:#5E5A50;letter-spacing:0.06em">KEEP SCROLLING</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div aria-hidden="true" style="position:relative;height:clamp(320px,52vh,480px);border:1px solid #D9D3C5;border-radius:6px;background:#EFEBE2;overflow:hidden">
+          <sc-for list="{{ heads }}" as="h" hint-placeholder-count="3">
+            <div style="position:absolute;left:{{ h.x }};top:6%;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#BD431B;opacity:{{ h.o }};transition:opacity .3s">{{ h.label }}</div>
+          </sc-for>
+          <sc-for list="{{ chips }}" as="c" hint-placeholder-count="15">
+            <div style="position:absolute;left:{{ c.x }};top:{{ c.y }};transform:{{ c.t }};background:{{ c.bg }};color:{{ c.fg }};border:1px solid {{ c.bd }};padding:6px 11px;border-radius:999px;font-size:13px;white-space:nowrap;transition:left .25s ease-out,top .25s ease-out,transform .25s ease-out,background .3s,color .3s,border-color .3s">{{ c.label }}</div>
+          </sc-for>
+        </div>
+        <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#5E5A50">{{ fieldCaption }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" data-screen-label="Featured work" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,120px) clamp(20px,4vw,48px) 0">
+  <div data-reveal="1" style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5E5A50">Selected work · 2023 → now</span>
+      <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(40px,5vw,72px);line-height:1;letter-spacing:-0.01em">Three knots, <em>unraveled.</em></h2>
+    </div>
+    <a href="#index" onClick="{{ goIndex }}" style="font-size:15px;color:#16150F;border-bottom:1px solid currentColor;padding-bottom:3px;white-space:nowrap;transition:color .2s" style-hover="color:#BD431B">All projects →</a>
+  </div>
+
+  <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+  <div style="display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:clamp(32px,4vw,72px)">
+    <div>
+      <sc-for list="{{ feats }}" as="f" hint-placeholder-count="3">
+        <article data-feat="1" style="min-height:86vh;display:flex;flex-direction:column;justify-content:center;gap:20px;opacity:{{ f.o }};transition:opacity .5s">
+          <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5E5A50">{{ f.n }} / 03 · {{ f.kicker }}</span>
+          <h3 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(40px,4.2vw,64px);line-height:0.98;letter-spacing:-0.01em">{{ f.title }}</h3>
+          <span style="font-family:'Instrument Serif',serif;font-style:italic;font-size:21px;color:#BD431B">{{ f.note }}</span>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#34322B;max-width:460px;text-wrap:pretty">{{ f.dek }}</p>
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,auto));justify-content:start;gap:clamp(22px,2.6vw,36px);padding:18px 0;border-top:2px solid #16150F;border-bottom:1px solid #D9D3C5;max-width:540px">
+            <sc-for list="{{ f.m }}" as="m" hint-placeholder-count="3">
+              <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'Instrument Serif',serif;font-size:clamp(30px,2.5vw,36px);line-height:1;letter-spacing:-0.015em;color:#BD431B">{{ m.v }}</span><span style="font-size:13px;font-weight:500;line-height:1.3;color:#34322B">{{ m.l }}</span></div>
+            </sc-for>
+          </div>
+          <button onClick="{{ f.open }}" style="align-self:flex-start;font:inherit;font-size:15px;background:#16150F;color:#F4F1EA;border:none;border-radius:999px;padding:14px 24px;cursor:pointer;white-space:nowrap;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="background:#BD431B;transform:translateY(-2px)" style-active="transform:scale(0.97)">Read the case study →</button>
+        </article>
+      </sc-for>
+    </div>
+    <div style="position:relative">
+      <div onClick="{{ openFeat }}" onKeyDown="{{ keyAct }}" role="link" tabindex="0" aria-label="Open the featured case study" style="position:sticky;top:96px;height:calc(100vh - 140px);max-height:760px;border-radius:6px;overflow:hidden;background:#16150F;cursor:pointer">
+        <img src="assets/scv/feature.gif" alt="Single Client View prototype" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:{{ fm0.o }};transform:{{ fm0.t }};transition:opacity .7s,transform 1.2s cubic-bezier(.2,.7,.2,1)">
+        <img loading="lazy" decoding="async" src="assets/choro/search.gif" alt="Chōro prototype" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:{{ fm1.o }};transform:{{ fm1.t }};transition:opacity .7s,transform 1.2s cubic-bezier(.2,.7,.2,1)">
+        <img loading="lazy" decoding="async" src="assets/aida/blueprint.gif" alt="AIDA product blueprint" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:{{ fm2.o }};transform:{{ fm2.t }};transition:opacity .7s,transform 1.2s cubic-bezier(.2,.7,.2,1)">
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 20px;display:flex;justify-content:space-between;align-items:end;gap:16px;background:linear-gradient(transparent,rgba(22,21,15,0.85))">
+          <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#F4F1EA">{{ featCap }}</span>
+          <span style="font-family:'Instrument Serif',serif;font-size:44px;line-height:0.9;color:#F4F1EA">{{ featNum }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+  <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;flex-direction:column;gap:48px">
+      <sc-for list="{{ feats }}" as="f" hint-placeholder-count="3">
+        <article onClick="{{ f.open }}" onKeyDown="{{ keyAct }}" role="link" tabindex="0" aria-label="{{ f.title }}" style="display:flex;flex-direction:column;gap:16px;cursor:pointer">
+          <div style="aspect-ratio:16/10;border-radius:6px;background:#16150F center/cover no-repeat;background-image:{{ f.bgi }}"></div>
+          <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5E5A50">{{ f.n }} · {{ f.kicker }}</span>
+          <h3 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:40px;line-height:1">{{ f.title }}</h3>
+          <span style="font-family:'Instrument Serif',serif;font-style:italic;font-size:19px;color:#BD431B">{{ f.note }}</span>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#34322B">{{ f.dek }}</p>
+        </article>
+      </sc-for>
+    </div>
+  </sc-if>
+</section>
+
+<section id="approach" data-screen-label="Method" style="background:#16150F;color:#F4F1EA;margin-top:clamp(72px,9vw,120px)">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,120px) clamp(20px,4vw,48px)">
+    <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px;margin-bottom:56px">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#E8764F">How the funded ones got funded</span>
+        <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(40px,5vw,72px);line-height:1;letter-spacing:-0.01em">From idea to <em style="color:#E8764F">funded</em> in six weeks.</h2>
+      </div>
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#C9C3B4;align-self:end;max-width:500px;text-wrap:pretty">Teams bring me a vision and a bottleneck. A validation sprint then gives leaders the evidence to make an investment decision. Single Client View and Chōro were both funded this way.</p>
+    </div>
+    <div style="position:relative;height:2px;background:#3A3830">
+      <div style="position:absolute;left:0;top:0;bottom:0;width:{{ procPct }};background:#E8764F;transition:width .15s linear"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:{{ stepCols }}">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
+        <div style="padding:26px 20px 12px 0;display:flex;flex-direction:column;gap:10px;opacity:{{ s.o }};transform:{{ s.t }};transition:opacity .5s ease,transform .5s ease">
+          <span style="width:11px;height:11px;border-radius:50%;margin-top:-32px;background:{{ s.dot }};border:2px solid #E8764F"></span>
+          <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#E8764F">{{ s.wk }}</span>
+          <span style="font-family:'Instrument Serif',serif;font-size:26px;line-height:1.05">{{ s.title }}</span>
+          <span style="font-size:14px;line-height:1.5;color:#A8A294">{{ s.body }}</span>
+        </div>
+      </sc-for>
+      <div style="position:relative;padding:26px 20px 22px;display:flex;flex-direction:column;gap:10px;border-radius:0 0 6px 6px;background:{{ last.bg }};color:{{ last.fg }};opacity:{{ last.o }};transform:{{ last.t }};transition:opacity .5s ease,transform .5s ease,background .6s ease,color .6s ease">
+        <span style="width:15px;height:15px;border-radius:50%;margin-top:-34px;background:{{ last.dot }};border:2px solid #E8764F;box-shadow:{{ last.glow }};transition:background .5s,box-shadow .6s"></span>
+        <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em">WEEK 06 · THE DECISION</span>
+        <span style="font-family:'Instrument Serif',serif;font-size:30px;line-height:1.02">Green-light</span>
+        <span style="font-size:14px;line-height:1.5">A narrated film makes the business case.</span>
+        <span style="align-self:flex-start;margin-top:4px;padding:6px 12px;border-radius:999px;background:#16150F;color:#F4F1EA;font-size:12.5px;line-height:1.3">✓ Funded</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Spaces" style="padding:clamp(72px,9vw,120px) 0 0">
+  <div data-reveal="1" style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px;align-items:end;margin-bottom:40px">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#3D5A99">Before software</span>
+      <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(40px,5vw,72px);line-height:1;letter-spacing:-0.01em">Learned UX in rooms, <em>not screens.</em></h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#34322B;max-width:520px;text-wrap:pretty">Museum and spatial experiences at Gallagher &amp; Associates and Rockwell Group, designed for broad, walk-in audiences:</p>
+      <p id="cr-spaces-quote" style="margin:0;font-family:'Instrument Serif',serif;font-size:clamp(24px,2.1vw,31px);line-height:1.22;letter-spacing:-0.008em;color:#16150F;max-width:520px;text-wrap:pretty"><span style="background-image:linear-gradient(rgba(232,118,79,0.5),rgba(232,118,79,0.5));background-repeat:no-repeat;background-position:0 92%;background-size:{{ hlA }};transition:background-size .12s linear">People in motion, with short attention and no instructions.</span> <em style="display:inline-block;color:#BD431B;opacity:{{ hlO }};transform:{{ hlT }};transition:opacity .6s ease,transform .7s cubic-bezier(.2,.8,.2,1)">Enterprise users aren’t so different.</em></p>
+      <div style="display:flex;gap:8px">
+        <button onClick="{{ railPrev }}" aria-label="Previous" style="width:44px;height:44px;border-radius:50%;border:1px solid #16150F;background:transparent;cursor:pointer;font-size:18px;color:#16150F;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="background:#16150F;color:#F4F1EA" style-active="transform:scale(0.97)">←</button>
+        <button onClick="{{ railNext }}" aria-label="Next" style="width:44px;height:44px;border-radius:50%;border:1px solid #16150F;background:#16150F;cursor:pointer;font-size:18px;color:#F4F1EA;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="background:#3D5A99;border-color:#3D5A99" style-active="transform:scale(0.97)">→</button>
+      </div>
+    </div>
+  </div>
+  <div id="cr-rail" style="display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 clamp(20px,4vw,48px) 24px max(calc(clamp(20px,4vw,48px) + 24px),calc((100% - 1320px) / 2 + clamp(20px,4vw,48px)));scroll-padding-left:max(calc(clamp(20px,4vw,48px) + 24px),calc((100% - 1320px) / 2 + clamp(20px,4vw,48px)));scrollbar-width:none">
+    <sc-for list="{{ spaces }}" as="s" hint-placeholder-count="5">
+      <article onClick="{{ s.open }}" onKeyDown="{{ keyAct }}" role="link" tabindex="0" aria-label="{{ s.title }}" style="flex:0 0 min(82vw,400px);scroll-snap-align:start;display:flex;flex-direction:column;gap:14px;cursor:pointer;transition:transform .35s cubic-bezier(.2,.8,.2,1)" style-hover="transform:translateY(-6px)">
+        <div style="position:relative;aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#E6E1D5"><div role="img" aria-label="{{ s.title }}" style="position:absolute;inset:0;background:#E6E1D5 center/cover no-repeat;background-image:{{ s.bgi }}"></div></div>
+        <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#5E5A50">{{ s.client }}</span>
+        <span style="font-family:'Instrument Serif',serif;font-size:28px;line-height:1.05">{{ s.title }}</span>
+        <span style="font-size:15px;line-height:1.5;color:#34322B;padding-left:14px;border-left:2px solid #3D5A99">{{ s.note }}</span>
+      </article>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="About teaser" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,120px) clamp(20px,4vw,48px)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px;border-top:1px solid #16150F;padding-top:40px" data-reveal="1">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5E5A50">An unusual path</span>
+      <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(36px,4vw,56px);line-height:1.02">Fluent in engineering, business <em>and</em> law.</h2>
+      <a href="#about" onClick="{{ goAbout }}" style="align-self:flex-start;font-size:15px;background:#16150F;color:#F4F1EA;border-radius:999px;padding:14px 24px;white-space:nowrap;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="background:#BD431B;color:#F4F1EA;transform:translateY(-2px)" style-active="transform:scale(0.97)">More about me →</a>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <div style="display:grid;grid-template-columns:36px minmax(0,1fr) minmax(0,1.4fr);gap:14px;padding:16px 0;border-bottom:1px solid #D9D3C5;align-items:baseline"><span style="font-family:'Geist Mono',monospace;font-size:11px;color:#5E5A50">01</span><span style="font-family:'Instrument Serif',serif;font-size:23px">Law</span><span style="font-size:14.5px;color:#5E5A50;line-height:1.5">Constraints are design material</span></div>
+      <div style="display:grid;grid-template-columns:36px minmax(0,1fr) minmax(0,1.4fr);gap:14px;padding:16px 0;border-bottom:1px solid #D9D3C5;align-items:baseline"><span style="font-family:'Geist Mono',monospace;font-size:11px;color:#5E5A50">02</span><span style="font-family:'Instrument Serif',serif;font-size:23px">Intl. business</span><span style="font-size:14.5px;color:#5E5A50;line-height:1.5">Find the deal that serves every stakeholder</span></div>
+      <div style="display:grid;grid-template-columns:36px minmax(0,1fr) minmax(0,1.4fr);gap:14px;padding:16px 0;border-bottom:1px solid #D9D3C5;align-items:baseline"><span style="font-family:'Geist Mono',monospace;font-size:11px;color:#5E5A50">03</span><span style="font-family:'Instrument Serif',serif;font-size:23px">MFA, Design &amp; Tech</span><span style="font-size:14.5px;color:#5E5A50;line-height:1.5">Prototype with your hands; test before you trust</span></div>
+      <div style="display:grid;grid-template-columns:36px minmax(0,1fr) minmax(0,1.4fr);gap:14px;padding:16px 0;border-bottom:1px solid #D9D3C5;align-items:baseline"><span style="font-family:'Geist Mono',monospace;font-size:11px;color:#5E5A50">04</span><span style="font-family:'Instrument Serif',serif;font-size:23px">Museums &amp; spaces</span><span style="font-size:14.5px;color:#5E5A50;line-height:1.5">Design for people in motion</span></div>
+      <div style="display:grid;grid-template-columns:36px minmax(0,1fr) minmax(0,1.4fr);gap:14px;padding:16px 0;border-bottom:1px solid #D9D3C5;align-items:baseline"><span style="font-family:'Geist Mono',monospace;font-size:11px;color:#BD431B">05</span><span style="font-family:'Instrument Serif',serif;font-size:23px;color:#BD431B">Enterprise AI</span><span style="font-size:14.5px;color:#16150F;line-height:1.5">Validate fast and make the case to executives</span></div>
+    </div>
+  </div>
+</section>
+</main>
+</sc-if>
+
+<sc-if value="{{ isScv }}" hint-placeholder-val="{{ false }}">
+<main id="main" tabindex="-1" data-screen-label="SCV case study">
+  <section style="max-width:1320px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,4vw,48px) 40px;display:flex;flex-direction:column;gap:28px">
+    <button data-in="rise:0" onClick="{{ goIndex }}" style="align-self:flex-start;background:none;border:none;border-bottom:1px solid currentColor;padding:0 0 3px;font:inherit;font-size:15px;cursor:pointer;color:#16150F;white-space:nowrap;transition:color .2s" style-hover="color:#BD431B">← All work</button>
+    <div data-in="rise:80" style="display:flex;gap:8px;flex-wrap:wrap;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase">
+      <span style="padding:5px 10px;border-radius:999px;background:#BD431B;color:#F4F1EA;white-space:nowrap">Case study</span>
+      <span style="padding:5px 10px;border-radius:999px;border:1px solid #BDB6A6;white-space:nowrap">Information architecture</span>
+      <span style="padding:5px 10px;border-radius:999px;border:1px solid #BDB6A6;white-space:nowrap">EMEA division, financial institution</span>
+    </div>
+    <h1 data-in="rise:160" style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(48px,7vw,104px);line-height:0.95;letter-spacing:-0.02em;max-width:1150px;text-wrap:balance">Eight platforms. One client. <em style="color:#BD431B">One calm view.</em></h1>
+    <p data-in="rise:260" style="margin:0;font-size:clamp(18px,1.6vw,21px);line-height:1.55;color:#34322B;max-width:720px;text-wrap:pretty">A bank’s client data lived in eight platforms. Role: UX lead on a six-week validation sprint. The result: a tested, executive-funded Single Client View.</p>
+    <div data-in="rise:340" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:24px;border-top:1px solid #16150F;padding-top:24px">
+      <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#5E5A50">Role</span><span style="font-size:16px">UX Lead</span></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#5E5A50">Timeline</span><span style="font-size:16px">6 weeks</span></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#5E5A50">Team</span><span style="font-size:16px">Innovation team, UI designer, SMEs</span></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#5E5A50">Outcome</span><span style="font-size:16px;color:#BD431B">Funded for development</span></div>
+    </div>
+  </section>
+  <section style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <div data-in="wipe:400" style="aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#16150F"><img loading="lazy" decoding="async" src="assets/scv/walkthrough.gif" alt="SCV prototype walkthrough" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+  </section>
+
+  <section data-screen-label="01 The mess" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,120px) clamp(20px,4vw,48px) 0">
+    <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,72px)">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#BD431B">Chapter 01: The mess</span>
+        <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(34px,3.8vw,54px);line-height:1.02">Knowing a client meant logging into eight systems.</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;font-size:17px;line-height:1.65;color:#34322B;align-self:end">
+        <p style="margin:0;text-wrap:pretty">Client data was scattered across eight platforms. Legal and operational details lived in different places, and answering a simple question often needed emails between departments. Some tasks took weeks.</p>
+        <p style="margin:0;text-wrap:pretty">The Innovation Team wanted to build a single view on top of the Data Hub and MDM. First they needed evidence that users wanted it and that it was technically feasible.</p>
+      </div>
+    </div>
+    <div data-reveal="1" role="img" aria-label="Diagram: eight separate systems consolidated into one Single Client View" style="margin-top:56px;display:flex;flex-wrap:wrap;justify-content:center;gap:24px;align-items:center;padding:clamp(24px,4vw,48px);border:1px solid #D9D3C5;border-radius:6px;background:#EFEBE2">
+      <div style="flex:1 1 260px;max-width:440px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px">
+        <div style="aspect-ratio:1;border:1px dashed #9C9585;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:'Geist Mono',monospace;font-size:11px;color:#5E5A50;transform:rotate(-4deg)">SYS 01</div>
+        <div style="aspect-ratio:1;border:1px dashed #9C9585;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:'Geist Mono',monospace;font-size:11px;color:#5E5A50;transform:rotate(3deg) translateY(6px)">SYS 02</div>
+        <div style="aspect-ratio:1;border:1px dashed #9C9585;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:'Geist Mono',monospace;font-size:11px;color:#5E5A50;transform:rotate(-2deg)">SYS 03</div>
+        <div style="aspect-ratio:1;border:1px dashed #9C9585;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:'Geist Mono',monospace;font-size:11px;color:#5E5A50;transform:rotate(5deg) translateY(-4px)">SYS 04</div>
+        <div style="aspect-ratio:1;border:1px dashed #9C9585;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:'Geist Mono',monospace;font-size:11px;color:#5E5A50;transform:rotate(2deg)">SYS 05</div>
+        <div style="aspect-ratio:1;border:1px dashed #9C9585;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:'Geist Mono',monospace;font-size:11px;color:#5E5A50;transform:rotate(-5deg) translateY(4px)">SYS 06</div>
+        <div style="aspect-ratio:1;border:1px dashed #9C9585;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:'Geist Mono',monospace;font-size:11px;color:#5E5A50;transform:rotate(3deg)">SYS 07</div>
+        <div style="aspect-ratio:1;border:1px dashed #9C9585;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:'Geist Mono',monospace;font-size:11px;color:#5E5A50;transform:rotate(-3deg) translateY(-6px)">SYS 08</div>
+      </div>
+      <div style="flex:0 0 auto;font-family:'Instrument Serif',serif;font-size:64px;text-align:center;color:#BD431B;line-height:1">→</div>
+      <div style="flex:1 1 260px;max-width:440px;aspect-ratio:16/10;border:1.5px solid #16150F;border-radius:6px;background:#F4F1EA;display:flex;flex-direction:column;justify-content:space-between;padding:20px">
+        <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5E5A50">Single Client View</span>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+          <span style="padding:10px;border-radius:4px;background:#16150F;color:#F4F1EA;font-size:13px">Legal</span>
+          <span style="padding:10px;border-radius:4px;background:#16150F;color:#F4F1EA;font-size:13px">Operational</span>
+          <span style="padding:10px;border-radius:4px;background:#BD431B;color:#F4F1EA;font-size:13px">Relationships</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="02 Listening" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,120px) clamp(20px,4vw,48px) 0">
+    <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,72px)">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#BD431B">Chapter 02: Listening</span>
+        <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(34px,3.8vw,54px);line-height:1.02">Workshops first, screens later.</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;font-size:17px;line-height:1.65;color:#34322B;align-self:end">
+        <p style="margin:0;text-wrap:pretty">Hands-on workshops and in-depth interviews with users and SMEs came first, and their findings became personas. Every later decision came back to one question: what does this person need to do their job today?</p>
+      </div>
+    </div>
+    <div data-reveal="1" style="margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1px;background:#D9D3C5;border:1px solid #D9D3C5">
+      <div style="background:#F4F1EA;padding:28px;display:flex;flex-direction:column;gap:10px"><span style="font-family:'Instrument Serif',serif;font-size:34px;line-height:1">Personas</span><span style="font-size:15px;color:#5E5A50;line-height:1.5">Built from qualitative research, so the team could argue from user needs instead of opinions.</span></div>
+      <div style="background:#F4F1EA;padding:28px;display:flex;flex-direction:column;gap:10px"><span style="font-family:'Instrument Serif',serif;font-size:34px;line-height:1">Journey</span><span style="font-family:'Geist',sans-serif;font-size:15px;color:#5E5A50;line-height:1.5">Touchpoints and pain points mapped across departments, then scoped into an MVP flow.</span></div>
+      <div style="background:#F4F1EA;padding:28px;display:flex;flex-direction:column;gap:10px"><span style="font-family:'Instrument Serif',serif;font-size:34px;line-height:1">Stories</span><span style="font-size:15px;color:#5E5A50;line-height:1.5">Requirements written as user stories that engineering and business could both sign off.</span></div>
+    </div>
+  </section>
+
+  <section data-screen-label="03 Structure" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,120px) clamp(20px,4vw,48px) 0">
+    <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,72px);margin-bottom:40px">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#BD431B">Chapter 03: Structure</span>
+        <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(34px,3.8vw,54px);line-height:1.02">The real design was the filtering logic.</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;font-size:17px;line-height:1.65;color:#34322B;align-self:end">
+        <p style="margin:0;text-wrap:pretty">The work defined how information was categorized, how multi-dataset search and filters behaved, and how granular permissions shaped what each role could see. Favorites and recent interactions cut repeat searches from the daily workflow.</p>
+      </div>
+    </div>
+    <div data-reveal="1" style="position:relative;border:1px solid #D9D3C5;border-radius:6px;overflow:hidden;background:#F8F3EF">
+      <div data-mag="1" ref="{{ flowRef }}" onScroll="{{ flowScroll }}" onPointerDown="{{ flowDown }}" onPointerMove="{{ flowMove }}" onPointerUp="{{ flowUp }}" onPointerLeave="{{ flowUp }}" style="overflow:auto;max-height:78vh;cursor:{{ flowCursor }};touch-action:pan-x pan-y;user-select:none"><img src="assets/scv/user-flow.svg" alt="Single Client View user flow" draggable="false" style="display:block;width:{{ flowW }};max-width:none;height:auto"></div>
+      <sc-if value="{{ fm.on }}" hint-placeholder-val="{{ false }}"><div onClick="{{ fm.jump }}" title="Jump to area" style="position:absolute;top:12px;right:12px;width:{{ fm.w }};height:{{ fm.h }};background-color:#FDFCFB;background-image:{{ fm.bg }};background-size:100% 100%;background-repeat:no-repeat;border:1px solid #16150F;border-radius:4px;box-shadow:0 6px 20px rgba(22,21,15,0.22);cursor:crosshair;overflow:hidden;z-index:3"><div style="position:absolute;left:{{ fm.vx }};top:{{ fm.vy }};width:{{ fm.vw }};height:{{ fm.vh }};border:2px solid #BD431B;background:rgba(196,72,31,0.14);box-sizing:border-box;pointer-events:none"></div></div></sc-if>
+      <div style="position:absolute;right:12px;bottom:12px;display:flex;align-items:center;gap:2px;background:#16150F;border-radius:999px;padding:4px;color:#F4F1EA;font-family:'Geist Mono',monospace;font-size:12px">
+        <button onClick="{{ flowOut }}" aria-label="Zoom out" style="width:36px;height:36px;border:0;border-radius:999px;background:transparent;color:#F4F1EA;font-size:18px;cursor:pointer;transition:background-color .2s" style-hover="background:#3A382F" style-active="transform:scale(0.97)">−</button>
+        <button onClick="{{ flowReset }}" aria-label="Fit" style="min-width:56px;height:36px;border:0;border-radius:999px;background:transparent;color:#F4F1EA;font-family:'Geist Mono',monospace;font-size:12px;cursor:pointer;transition:background-color .2s" style-hover="background:#3A382F" style-active="transform:scale(0.97)">{{ flowPct }}</button>
+        <button onClick="{{ flowIn }}" aria-label="Zoom in" style="width:36px;height:36px;border:0;border-radius:999px;background:transparent;color:#F4F1EA;font-size:18px;cursor:pointer;transition:background-color .2s" style-hover="background:#3A382F" style-active="transform:scale(0.97)">+</button>
+      </div>
+    </div>
+    <span style="display:block;margin-top:12px;font-family:'Geist Mono',monospace;font-size:12px;color:#5E5A50">User flow for Single Client View · click any area to zoom in, click again to zoom out, drag to move around</span>
+  </section>
+
+  <section data-screen-label="04 Sketch to wireframe" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,120px) clamp(20px,4vw,48px) 0">
+    <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#BD431B">Chapter 04: Iterate cheap</span>
+        <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(34px,3.8vw,54px);line-height:1.02">Sketch, test, then wireframe.</h2>
+      </div>
+      <div style="display:flex;border:1px solid #16150F;border-radius:999px;padding:3px;gap:3px">
+        <button onClick="{{ showSketch }}" aria-pressed="{{ skOn }}" style="font:inherit;font-size:14px;border:none;border-radius:999px;padding:8px 16px;min-height:40px;cursor:pointer;transition:background-color .25s,color .25s;background:{{ sketchBg }};color:{{ sketchFg }}">Sketch</button>
+        <button onClick="{{ showWire }}" aria-pressed="{{ wireOn }}" style="font:inherit;font-size:14px;border:none;border-radius:999px;padding:8px 16px;min-height:40px;cursor:pointer;transition:background-color .25s,color .25s;background:{{ wireBg }};color:{{ wireFg }}">Wireframe</button>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+      <sc-for list="{{ shots }}" as="s" hint-placeholder-count="4">
+        <button onClick="{{ s.pick }}" aria-pressed="{{ s.on }}" style="font:inherit;font-size:14px;padding:8px 16px;min-height:44px;border-radius:999px;cursor:pointer;border:1px solid {{ s.bd }};background:{{ s.bg }};color:{{ s.fg }};transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="transform:translateY(-2px)" style-active="transform:scale(0.97)">{{ s.label }}</button>
+      </sc-for>
+    </div>
+    <div style="border:1px solid #D9D3C5;border-radius:6px;overflow:hidden;background:#FFFFFF;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center">
+      <img src="assets/scv/dashboard-sketch.jpg" alt="Dashboard sketch" style="max-width:100%;max-height:100%;object-fit:contain;display:{{ shotVis.s0 }}">
+      <img src="assets/scv/dashboard-wireframe.jpg" alt="Dashboard wireframe" style="max-width:100%;max-height:100%;object-fit:contain;display:{{ shotVis.w0 }}">
+      <img src="assets/scv/search-sketch.jpg" alt="Search by name sketch" style="max-width:100%;max-height:100%;object-fit:contain;display:{{ shotVis.s1 }}">
+      <img src="assets/scv/search-wireframe.jpg" alt="Search by name wireframe" style="max-width:100%;max-height:100%;object-fit:contain;display:{{ shotVis.w1 }}">
+      <img src="assets/scv/records-sketch.jpg" alt="Underlying records sketch" style="max-width:100%;max-height:100%;object-fit:contain;display:{{ shotVis.s2 }}">
+      <img src="assets/scv/records-wireframe.jpg" alt="Underlying records wireframe" style="max-width:100%;max-height:100%;object-fit:contain;display:{{ shotVis.w2 }}">
+      <img src="assets/scv/reorder-sketch.jpg" alt="Reorder results sketch" style="max-width:100%;max-height:100%;object-fit:contain;display:{{ shotVis.s3 }}">
+      <img src="assets/scv/reorder-wireframe.jpg" alt="Reorder results wireframe" style="max-width:100%;max-height:100%;object-fit:contain;display:{{ shotVis.w3 }}">
+    </div>
+    <p style="margin:16px 0 0;font-size:15px;line-height:1.6;color:#5E5A50;max-width:720px">Each sketch was tested with clients before it became a wireframe. That kept iteration fast and cheap, and it let engineering check feasibility before scope was locked.</p>
+  </section>
+
+  <section data-screen-label="05 Prototype" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,120px) clamp(20px,4vw,48px) 0">
+    <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:40px">
+      <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#BD431B">Chapter 05: Make it real</span>
+      <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(34px,3.8vw,54px);line-height:1.02;max-width:900px">A high-fidelity prototype and an 8-minute film for the executive room.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:20px">
+      <div data-reveal="1" style="border-radius:6px;overflow:hidden;background:#16150F;aspect-ratio:16/10"><img loading="lazy" decoding="async" src="assets/scv/search-results.gif" alt="Search results" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div data-reveal="1" style="border-radius:6px;overflow:hidden;background:#16150F;aspect-ratio:16/10"><img loading="lazy" decoding="async" src="assets/scv/client-detail.gif" alt="Client detail" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div data-reveal="1" style="border-radius:6px;overflow:hidden;background:#16150F;aspect-ratio:16/10"><img loading="lazy" decoding="async" src="assets/scv/filtering.gif" alt="Filtering" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div data-reveal="1" style="border-radius:6px;overflow:hidden;background:#16150F;aspect-ratio:16/10"><img loading="lazy" decoding="async" src="assets/scv/custom-view.gif" alt="Customized view" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+    </div>
+  </section>
+
+  <section data-screen-label="06 Outcome" style="background:#16150F;color:#F4F1EA;margin-top:clamp(72px,9vw,120px)">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,120px) clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:56px">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#E8764F">Chapter 06: Outcome</span>
+        <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(44px,5.5vw,84px);line-height:1;max-width:1000px">Executives saw the film and <em style="color:#E8764F">funded the build.</em></h2>
+      </div>
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));border-top:1px solid #3A3830">
+        <div style="padding:24px 24px 0 0;display:flex;flex-direction:column;gap:8px"><span style="font-family:'Instrument Serif',serif;font-size:clamp(32px,3vw,42px);line-height:1">8 → 1</span><span style="font-size:14px;color:#A8A294">platforms, with single sign-on</span></div>
+        <div style="padding:24px 24px 0 0;display:flex;flex-direction:column;gap:8px"><span style="font-family:'Instrument Serif',serif;font-size:clamp(32px,3vw,42px);line-height:1">Weeks → days</span><span style="font-size:14px;color:#A8A294">for research and cross-team requests</span></div>
+        <div style="padding:24px 24px 0 0;display:flex;flex-direction:column;gap:8px"><span style="font-family:'Instrument Serif',serif;font-size:clamp(32px,3vw,42px);line-height:1">6 wks</span><span style="font-family:'Geist',sans-serif;font-size:14px;color:#A8A294">from kickoff to green-light</span></div>
+      </div>
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:32px">
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'Instrument Serif',serif;font-size:28px">Validated need</span><span style="font-size:15px;line-height:1.55;color:#A8A294">User testing confirmed the value proposition, and SMEs bought in.</span></div>
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'Instrument Serif',serif;font-size:28px">Feasibility mapped</span><span style="font-size:15px;line-height:1.55;color:#A8A294">Early wireframes exposed the technical architecture needed before any code was written.</span></div>
+        <div style="display:flex;flex-direction:column;gap:10px"><span style="font-family:'Instrument Serif',serif;font-size:28px">A roadmap</span><span style="font-size:15px;line-height:1.55;color:#A8A294">It laid the groundwork for the EIC and transaction-monitoring platforms that followed.</span></div>
+      </div>
+    </div>
+  </section>
+  <section data-screen-label="Project navigation" style="border-top:1px solid #3A3830;background:#16150F;color:#F4F1EA">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 40px;display:flex;flex-direction:column;gap:40px">
+      <button onClick="{{ nav.goNext }}" style="background:none;border:none;padding:0;font:inherit;text-align:left;width:100%;display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;cursor:pointer;color:#F4F1EA;transition:color .25s" style-hover="color:#E8764F">
+        <span style="display:flex;flex-direction:column;gap:12px">
+          <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#E8764F">Next case study</span>
+          <span style="font-family:'Instrument Serif',serif;font-size:clamp(40px,5.5vw,84px);line-height:1">{{ nav.nextTitle }}</span>
+          <span style="font-size:15px;color:#A8A294">{{ nav.nextShort }}</span>
+        </span>
+        <span style="font-family:'Instrument Serif',serif;font-size:clamp(48px,6vw,96px);line-height:1;color:#E8764F">→</span>
+      </button>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A8A294">Or browse by category</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <sc-for list="{{ nav.cats }}" as="k" hint-placeholder-count="4">
+            <button onClick="{{ k.go }}" style="font:inherit;font-size:14px;padding:8px 16px;min-height:44px;border-radius:999px;cursor:pointer;border:1px solid {{ k.bd }};background:{{ k.bg }};color:#F4F1EA;display:flex;gap:8px;align-items:center;white-space:nowrap;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="border-color:#F4F1EA;transform:translateY(-2px)" style-active="transform:scale(0.97)"><span style="width:8px;height:8px;border-radius:50%;background:{{ k.dot }};box-shadow:0 0 0 1px rgba(244,241,234,0.6)"></span>{{ k.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:16px 24px;flex-wrap:wrap;border-top:1px solid #3A3830;padding-top:24px">
+        <sc-if value="{{ nav.hasPrev }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ nav.goPrev }}" style="background:none;border:none;padding:0;font:inherit;text-align:left;cursor:pointer;display:flex;align-items:center;gap:14px;color:#F4F1EA;transition:color .2s" style-hover="color:#E8764F"><span style="width:44px;height:44px;border-radius:50%;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:18px;flex:none">←</span><span style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A8A294">Previous case study</span><span style="font-family:'Instrument Serif',serif;font-size:24px;line-height:1.1">{{ nav.prevTitle }}</span></span></button>
+        </sc-if>
+        <a href="#index" onClick="{{ goIndex }}" style="margin-left:auto;font-size:15px;color:#F4F1EA;border-bottom:1px solid currentColor;padding-bottom:3px;white-space:nowrap;transition:color .2s" style-hover="color:#E8764F">All work</a>
+      </div>
+    </div>
+  </section>
+</main>
+</sc-if>
+
+<sc-if value="{{ isGen }}" hint-placeholder-val="{{ false }}">
+<main id="main" tabindex="-1" data-screen-label="Case study">
+  <section style="max-width:1320px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,4vw,48px) 40px;display:flex;flex-direction:column;gap:28px">
+    <button data-in="rise:0" onClick="{{ goIndex }}" style="align-self:flex-start;background:none;border:none;border-bottom:1px solid currentColor;padding:0 0 3px;font:inherit;font-size:15px;cursor:pointer;color:#16150F;white-space:nowrap;transition:color .2s" style-hover="color:#BD431B">← All work</button>
+    <div data-in="rise:80" style="display:flex;gap:8px;flex-wrap:wrap;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase">
+      <span style="padding:5px 10px;border-radius:999px;background:{{ c.catColor }};color:#F4F1EA;white-space:nowrap">{{ c.kicker }}</span>
+      <span style="padding:5px 10px;border-radius:999px;border:1px solid #BDB6A6;white-space:nowrap">{{ c.client }}</span>
+    </div>
+    <h1 data-in="rise:160" style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(48px,7vw,104px);line-height:0.95;letter-spacing:-0.02em;max-width:1100px;text-wrap:balance">{{ c.h1a }} <em style="color:{{ c.catColor }}">{{ c.h1b }}</em></h1>
+    <p data-in="rise:260" style="margin:0;font-size:clamp(18px,1.6vw,21px);line-height:1.55;color:#34322B;max-width:720px;text-wrap:pretty">{{ c.dek }}</p>
+    <div data-in="rise:340" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:24px;border-top:1px solid #16150F;padding-top:24px">
+      <sc-for list="{{ c.meta }}" as="m" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#5E5A50">{{ m.k }}</span><span style="font-size:16px">{{ m.v }}</span></div>
+      </sc-for>
+    </div>
+  </section>
+  <section style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <sc-if value="{{ c.hasHero }}" hint-placeholder-val="{{ true }}">
+      <div data-in="wipe:400" role="img" aria-label="{{ c.title }}" style="aspect-ratio:16/9;border-radius:6px;background:#16150F no-repeat;background-size:cover;background-position:{{ c.heroPos }};background-image:{{ c.heroBg }}" ></div>
+    </sc-if>
+    <sc-if value="{{ c.hasHeroZoom }}" hint-placeholder-val="{{ false }}">
+      <div><div style="display:flex;flex-direction:column;gap:12px">
+        <div style="position:relative;border:1px solid #D9D3C5;border-radius:6px;overflow:hidden;background:#F8F3EF">
+          <div ref="{{ c.hz.ref }}" onScroll="{{ c.hz.onScroll }}" onPointerDown="{{ c.hz.down }}" onPointerMove="{{ c.hz.move }}" onPointerUp="{{ c.hz.up }}" onPointerLeave="{{ c.hz.up }}" style="overflow:auto;max-height:78vh;cursor:{{ c.hz.cur }};user-select:none">{{ c.hz.img }}</div>
+          <sc-if value="{{ c.hz.mini.on }}" hint-placeholder-val="{{ false }}"><div onClick="{{ c.hz.mini.jump }}" title="Jump to area" style="position:absolute;top:12px;right:12px;width:{{ c.hz.mini.w }};height:{{ c.hz.mini.h }};background-color:#FDFCFB;background-image:{{ c.hz.mini.bg }};background-size:100% 100%;background-repeat:no-repeat;border:1px solid #16150F;border-radius:4px;box-shadow:0 6px 20px rgba(22,21,15,0.22);cursor:crosshair;overflow:hidden;z-index:3"><div style="position:absolute;left:{{ c.hz.mini.vx }};top:{{ c.hz.mini.vy }};width:{{ c.hz.mini.vw }};height:{{ c.hz.mini.vh }};border:2px solid #BD431B;background:rgba(196,72,31,0.14);box-sizing:border-box;pointer-events:none"></div></div></sc-if>
+          <div style="position:absolute;right:12px;bottom:12px;display:flex;align-items:center;gap:2px;background:#16150F;border-radius:999px;padding:4px;color:#F4F1EA;font-family:'Geist Mono',monospace;font-size:12px">
+            <button onClick="{{ c.hz.zout }}" aria-label="Zoom out" style="width:36px;height:36px;border:0;border-radius:999px;background:transparent;color:#F4F1EA;font-size:18px;cursor:pointer;transition:background-color .2s" style-hover="background:#3A382F" style-active="transform:scale(0.97)">−</button>
+            <button onClick="{{ c.hz.reset }}" aria-label="Fit" style="min-width:56px;height:36px;border:0;border-radius:999px;background:transparent;color:#F4F1EA;font-family:'Geist Mono',monospace;font-size:12px;cursor:pointer;transition:background-color .2s" style-hover="background:#3A382F" style-active="transform:scale(0.97)">{{ c.hz.pct }}</button>
+            <button onClick="{{ c.hz.zin }}" aria-label="Zoom in" style="width:36px;height:36px;border:0;border-radius:999px;background:transparent;color:#F4F1EA;font-size:18px;cursor:pointer;transition:background-color .2s" style-hover="background:#3A382F" style-active="transform:scale(0.97)">+</button>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-family:'Geist Mono',monospace;font-size:12px;line-height:1.5;color:#5E5A50">
+          <span style="line-height:1.5">Click any area to zoom in, click again to zoom out, drag to move around</span>
+          <a href="{{ c.hz.full }}" target="_blank" style="font-family:inherit;font-size:13px;color:#5E5A50;white-space:nowrap" style-hover="color:#BD431B">Full size ↗</a>
+        </div>
+      </div></div>
+    </sc-if>
+    <sc-if value="{{ c.noHero }}" hint-placeholder-val="{{ false }}">
+      <div style="position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#E6E1D5"><image-slot id="case-hero-{{ c.slug }}" shape="rounded" radius="6" placeholder="Drop photo: {{ c.heroLabel }}"></image-slot></div>
+    </sc-if>
+    <sc-if value="{{ c.hasMetrics }}" hint-placeholder-val="{{ true }}"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:20px;padding:28px 0;border-bottom:1px solid #D9D3C5">
+      <sc-for list="{{ c.metrics }}" as="m" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Instrument Serif',serif;font-size:clamp(32px,3vw,42px);line-height:1">{{ m.v }}</span><span style="font-size:13px;color:#5E5A50">{{ m.l }}</span></div>
+      </sc-for>
+    </div></sc-if>
+  </section>
+  <sc-for list="{{ c.chapters }}" as="ch" hint-placeholder-count="3">
+    <section style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,120px) clamp(20px,4vw,48px) 0">
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,72px)">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:{{ c.catColor }}">Chapter {{ ch.n }} · {{ ch.k }}</span>
+          <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(34px,3.8vw,54px);line-height:1.04;text-wrap:balance">{{ ch.t }}</h2>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;align-self:end">
+          <sc-for list="{{ ch.body }}" as="b" hint-placeholder-count="1">
+            <p style="margin:0;font-size:17px;line-height:1.65;color:#34322B;text-wrap:pretty">{{ b.p }}</p>
+          </sc-for>
+          <sc-if value="{{ ch.hasBullets }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;border-top:1px solid #D9D3C5">
+              <sc-for list="{{ ch.bullets }}" as="bl" hint-placeholder-count="3">
+                <div style="display:grid;grid-template-columns:32px minmax(0,1fr);gap:8px;padding:12px 0;border-bottom:1px solid #D9D3C5;font-size:15.5px;line-height:1.5"><span style="font-family:'Geist Mono',monospace;font-size:11px;color:{{ c.catColor }};padding-top:3px">{{ bl.n }}</span><span>{{ bl.t }}</span></div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+      <sc-if value="{{ ch.hasImgs }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:40px;display:grid;grid-template-columns:{{ ch.cols }};gap:20px;align-items:start">
+          <sc-for list="{{ ch.imgs }}" as="im" hint-placeholder-count="0">
+            <figure data-reveal="1" style="margin:0;display:flex;flex-direction:column;gap:10px">
+              <sc-if value="{{ im.plain }}" hint-placeholder-val="{{ true }}"><div role="img" aria-label="{{ im.cap }}" style="aspect-ratio:{{ ch.ratio }};border:1px solid #D9D3C5;border-radius:6px;background:#FFFFFF center/contain no-repeat;background-image:{{ im.bg }}"></div></sc-if>
+              <sc-if value="{{ im.zoom }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-direction:column;gap:12px">
+        <div style="position:relative;border:1px solid #D9D3C5;border-radius:6px;overflow:hidden;background:#F8F3EF">
+          <div ref="{{ im.ref }}" onScroll="{{ im.onScroll }}" onPointerDown="{{ im.down }}" onPointerMove="{{ im.move }}" onPointerUp="{{ im.up }}" onPointerLeave="{{ im.up }}" style="overflow:auto;max-height:78vh;cursor:{{ im.cur }};user-select:none">{{ im.img }}</div>
+          <sc-if value="{{ im.mini.on }}" hint-placeholder-val="{{ false }}"><div onClick="{{ im.mini.jump }}" title="Jump to area" style="position:absolute;top:12px;right:12px;width:{{ im.mini.w }};height:{{ im.mini.h }};background-color:#FDFCFB;background-image:{{ im.mini.bg }};background-size:100% 100%;background-repeat:no-repeat;border:1px solid #16150F;border-radius:4px;box-shadow:0 6px 20px rgba(22,21,15,0.22);cursor:crosshair;overflow:hidden;z-index:3"><div style="position:absolute;left:{{ im.mini.vx }};top:{{ im.mini.vy }};width:{{ im.mini.vw }};height:{{ im.mini.vh }};border:2px solid #BD431B;background:rgba(196,72,31,0.14);box-sizing:border-box;pointer-events:none"></div></div></sc-if>
+          <div style="position:absolute;right:12px;bottom:12px;display:flex;align-items:center;gap:2px;background:#16150F;border-radius:999px;padding:4px;color:#F4F1EA;font-family:'Geist Mono',monospace;font-size:12px">
+            <button onClick="{{ im.zout }}" aria-label="Zoom out" style="width:36px;height:36px;border:0;border-radius:999px;background:transparent;color:#F4F1EA;font-size:18px;cursor:pointer;transition:background-color .2s" style-hover="background:#3A382F" style-active="transform:scale(0.97)">−</button>
+            <button onClick="{{ im.reset }}" aria-label="Fit" style="min-width:56px;height:36px;border:0;border-radius:999px;background:transparent;color:#F4F1EA;font-family:'Geist Mono',monospace;font-size:12px;cursor:pointer;transition:background-color .2s" style-hover="background:#3A382F" style-active="transform:scale(0.97)">{{ im.pct }}</button>
+            <button onClick="{{ im.zin }}" aria-label="Zoom in" style="width:36px;height:36px;border:0;border-radius:999px;background:transparent;color:#F4F1EA;font-size:18px;cursor:pointer;transition:background-color .2s" style-hover="background:#3A382F" style-active="transform:scale(0.97)">+</button>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-family:'Geist Mono',monospace;font-size:12px;line-height:1.5;color:#5E5A50">
+          <span style="line-height:1.5">Click any area to zoom in, click again to zoom out, drag to move around</span>
+          <a href="{{ im.full }}" target="_blank" style="font-family:inherit;font-size:13px;color:#5E5A50;white-space:nowrap" style-hover="color:#BD431B">Full size ↗</a>
+        </div>
+      </div></sc-if>
+              <sc-if value="{{ im.wide }}" hint-placeholder-val="{{ false }}"><button onClick="{{ im.open }}" aria-label="Enlarge: {{ im.cap }}" style="all:unset;display:block;cursor:zoom-in;border:1px solid #D9D3C5;border-radius:6px;overflow:hidden;background:#FFFFFF;transition:border-color .2s,box-shadow .2s" style-hover="border-color:#16150F;box-shadow:0 10px 30px rgba(22,21,15,0.12)"><img src="{{ im.src }}" alt="{{ im.cap }}" loading="lazy" style="display:block;width:100%;height:auto;aspect-ratio:{{ ch.cropAr }};object-fit:{{ ch.fit }};background:{{ ch.fitBg }}"></button></sc-if>
+              <sc-if value="{{ im.bare }}" hint-placeholder-val="{{ false }}"><button onClick="{{ im.open }}" aria-label="Enlarge: {{ im.cap }}" style="all:unset;display:block;cursor:zoom-in;transition:transform .2s" style-hover="transform:translateY(-2px)"><img src="{{ im.src }}" alt="{{ im.cap }}" loading="lazy" style="display:block;width:100%;height:auto"></button></sc-if>
+              <sc-if value="{{ im.scroll }}" hint-placeholder-val="{{ false }}"><div style="position:relative;height:{{ ch.fh }};border:1px solid #D9D3C5;border-radius:6px;overflow:hidden;background:#FFFFFF"><div style="position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin"><img src="{{ im.src }}" alt="{{ im.cap }}" loading="lazy" style="display:block;width:100%;height:auto"></div><button onClick="{{ im.open }}" aria-label="Enlarge: {{ im.cap }}" style="position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;border:none;background:#16150F;color:#F4F1EA;cursor:zoom-in;font-size:14px;display:flex;align-items:center;justify-content:center;transition:background-color .2s" style-hover="background:#BD431B">⤢</button><div style="position:absolute;left:0;right:0;bottom:0;height:44px;background:linear-gradient(rgba(255,255,255,0),#FFFFFF);pointer-events:none"></div></div></sc-if>
+              <figcaption style="font-family:'Geist Mono',monospace;font-size:11.5px;color:#5E5A50;display:flex;justify-content:space-between;gap:10px"><span style="flex:1 1 auto;min-width:0">{{ im.cap }}</span><span style="flex-shrink:0;color:#BD431B;white-space:nowrap">{{ im.hint }}</span></figcaption>
+            </figure>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ ch.hasVideo }}" hint-placeholder-val="{{ false }}">
+        <figure style="margin:40px 0 0;display:flex;flex-direction:column;gap:10px"><div style="position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#16150F"><iframe src="{{ ch.video }}" title="{{ ch.videoCap }}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="true" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div><figcaption style="font-family:'Geist Mono',monospace;font-size:11.5px;color:#5E5A50">{{ ch.videoCap }}</figcaption></figure>
+      </sc-if>
+      <sc-if value="{{ ch.hasPh }}" hint-placeholder-val="{{ false }}">
+        <div style="position:relative;margin-top:40px;aspect-ratio:21/9;border-radius:6px;overflow:hidden;background:#E6E1D5"><image-slot id="case-{{ ch.slot }}" shape="rounded" radius="6" placeholder="Drop photo: {{ ch.ph }}"></image-slot></div>
+      </sc-if>
+    </section>
+  </sc-for>
+  <section data-screen-label="Project navigation" style="margin-top:clamp(72px,9vw,120px);background:#16150F;color:#F4F1EA">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 40px;display:flex;flex-direction:column;gap:40px">
+      <button onClick="{{ nav.goNext }}" style="background:none;border:none;padding:0;font:inherit;text-align:left;width:100%;display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;cursor:pointer;color:#F4F1EA;transition:color .25s" style-hover="color:#E8764F">
+        <span style="display:flex;flex-direction:column;gap:12px">
+          <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#E8764F">Next case study</span>
+          <span style="font-family:'Instrument Serif',serif;font-size:clamp(40px,5.5vw,84px);line-height:1">{{ nav.nextTitle }}</span>
+          <span style="font-size:15px;color:#A8A294">{{ nav.nextShort }}</span>
+        </span>
+        <span style="font-family:'Instrument Serif',serif;font-size:clamp(48px,6vw,96px);line-height:1;color:#E8764F">→</span>
+      </button>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A8A294">Or browse by category</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <sc-for list="{{ nav.cats }}" as="k" hint-placeholder-count="4">
+            <button onClick="{{ k.go }}" style="font:inherit;font-size:14px;padding:8px 16px;min-height:44px;border-radius:999px;cursor:pointer;border:1px solid {{ k.bd }};background:{{ k.bg }};color:#F4F1EA;display:flex;gap:8px;align-items:center;white-space:nowrap;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="border-color:#F4F1EA;transform:translateY(-2px)" style-active="transform:scale(0.97)"><span style="width:8px;height:8px;border-radius:50%;background:{{ k.dot }};box-shadow:0 0 0 1px rgba(244,241,234,0.6)"></span>{{ k.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:16px 24px;flex-wrap:wrap;border-top:1px solid #3A3830;padding-top:24px">
+        <sc-if value="{{ nav.hasPrev }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ nav.goPrev }}" style="background:none;border:none;padding:0;font:inherit;text-align:left;cursor:pointer;display:flex;align-items:center;gap:14px;color:#F4F1EA;transition:color .2s" style-hover="color:#E8764F"><span style="width:44px;height:44px;border-radius:50%;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:18px;flex:none">←</span><span style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A8A294">Previous case study</span><span style="font-family:'Instrument Serif',serif;font-size:24px;line-height:1.1">{{ nav.prevTitle }}</span></span></button>
+        </sc-if>
+        <a href="#index" onClick="{{ goIndex }}" style="margin-left:auto;font-size:15px;color:#F4F1EA;border-bottom:1px solid currentColor;padding-bottom:3px;white-space:nowrap;transition:color .2s" style-hover="color:#E8764F">All work</a>
+      </div>
+    </div>
+  </section>
+</main>
+</sc-if>
+
+<sc-if value="{{ isIndex }}" hint-placeholder-val="{{ false }}">
+<main id="main" tabindex="-1" data-screen-label="Work index" onMouseMove="{{ onIdxMove }}" style="max-width:1320px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,4vw,48px) clamp(72px,9vw,120px)">
+  <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5E5A50" data-in="rise:0">Index · 16 projects</span>
+  <h1 data-in="rise:100" style="margin:18px 0 0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(48px,7vw,104px);line-height:0.95;letter-spacing:-0.02em;max-width:1000px">From museum floors to <em style="color:#BD431B">AI platforms.</em></h1>
+  <div data-in="rise:200" style="display:flex;gap:8px;flex-wrap:wrap;margin:36px 0 0">
+    <sc-for list="{{ filters }}" as="f" hint-placeholder-count="5">
+      <button onClick="{{ f.pick }}" aria-pressed="{{ f.on }}" style="font:inherit;font-size:14px;padding:8px 16px;min-height:44px;border-radius:999px;cursor:pointer;border:1px solid {{ f.bd }};background:{{ f.bg }};color:{{ f.fg }};display:flex;gap:8px;align-items:center;white-space:nowrap;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="transform:translateY(-2px)" style-active="transform:scale(0.97)"><span style="width:8px;height:8px;border-radius:50%;background:{{ f.dot }};display:{{ f.dotD }};box-shadow:0 0 0 1px rgba(244,241,234,0.6)"></span>{{ f.label }}<span style="font-family:'Geist Mono',monospace;font-size:10.5px;opacity:0.7">{{ f.n }}</span></button>
+    </sc-for>
+  </div>
+  <div data-stag-list="300" style="border-top:1px solid #16150F;margin-top:24px" onMouseLeave="{{ idxLeave }}">
+    <sc-for list="{{ work }}" as="w" hint-placeholder-count="10">
+      <a href="{{ w.href }}" target="{{ w.target }}" onClick="{{ w.onClick }}" onMouseEnter="{{ w.enter }}" style="display:grid;grid-template-columns:{{ idxCols }};gap:16px;padding:20px 12px 20px {{ w.pl }};border-bottom:1px solid #D9D3C5;align-items:baseline;background:{{ w.bg }};color:{{ w.fg }};transition:padding .25s,background .3s,color .3s">
+        <span style="font-family:'Geist Mono',monospace;font-size:11.5px;color:{{ w.mut }};transition:color .3s">{{ w.n }}</span>
+        <span style="display:flex;flex-direction:column;gap:3px;min-width:0"><span style="font-family:'Instrument Serif',serif;font-size:clamp(23px,2.4vw,32px);line-height:1.08">{{ w.title }}</span><span style="font-size:13.5px;color:{{ w.mut }};transition:color .3s">{{ w.sub }}</span></span>
+        <span style="display:{{ idxShow }};font-size:13.5px;color:{{ w.mid }};transition:color .3s">{{ w.client }}</span>
+        <span style="font-family:'Geist Mono',monospace;font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;display:{{ idxShow }};color:{{ w.catColor }}">{{ w.cat }}</span>
+        <span style="font-size:17px;text-align:right">{{ w.arrow }}</span>
+      </a>
+    </sc-for>
+  </div>
+</main>
+</sc-if>
+
+<sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+<main id="main" tabindex="-1" data-screen-label="About">
+  <section style="max-width:1320px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,4vw,48px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,72px);align-items:end">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5E5A50" data-in="rise:0">About Cecile</span>
+      <h1 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(48px,6.4vw,96px);line-height:0.95;letter-spacing:-0.02em;text-wrap:balance"><span data-in="word:120" style="display:inline-block">From</span> <span data-in="word:190" style="display:inline-block">contracts</span> <span data-in="word:260" style="display:inline-block">to</span> <span data-in="word:330" style="display:inline-block">kinetic</span> <span data-in="word:400" style="display:inline-block">sculpture</span> <span data-in="word:470" style="display:inline-block">to</span> <span data-in="word:540" style="display:inline-block"><em style="color:#BD431B">AI.</em></span></h1>
+      <p data-in="rise:750" style="margin:0;font-size:18px;line-height:1.6;color:#34322B;max-width:560px;text-wrap:pretty">UX architect and senior experience designer in New York, turning complex, regulated systems into clear, compliant, intuitive products. The method: strict logic and regulation, balanced with business strategy and empathy for the people who use them.</p>
+    </div>
+    <div onMouseMove="{{ tiltMove }}" onMouseLeave="{{ tiltLeave }}" style="position:relative;max-width:440px;width:100%;justify-self:end"><div data-frame="1" data-in="fade:1100" style="position:absolute;inset:0;border:1px solid #BD431B;border-radius:6px;transform:translate(14px,14px);transition:transform .5s cubic-bezier(.2,.8,.2,1);pointer-events:none"></div><div data-tilt="1" style="position:relative;transition:transform .5s cubic-bezier(.2,.8,.2,1)"><div data-in="wipe:250" style="aspect-ratio:4/5;border-radius:6px;overflow:hidden;background:#F4F1EA;isolation:isolate"><img data-in="zoom:250" src="assets/portrait-about.jpeg" alt="Cecile Roca" style="width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block"></div></div></div>
+  </section>
+
+  <section style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,120px) clamp(20px,4vw,48px) 0">
+    <div data-reveal="1" style="display:flex;flex-direction:column;gap:14px;margin-bottom:40px">
+      <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#BD431B">Five rooms, one habit</span>
+      <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(36px,4.2vw,60px);line-height:1.02;max-width:820px">Each career left a lesson that’s still in use every day.</h2>
+    </div>
+    <div style="border-top:1px solid #16150F">
+      <div data-reveal="1" style="display:grid;grid-template-columns:{{ roomCols }};column-gap:clamp(20px,6vw,112px);row-gap:12px;padding:26px 0;border-bottom:1px solid #D9D3C5;align-items:center;transition:background-color .3s,padding .35s cubic-bezier(.2,.8,.2,1),box-shadow .3s" style-hover="background:#ECE7DB;padding-left:16px;box-shadow:inset 3px 0 0 #2F6B5A"><span style="font-family:'Geist Mono',monospace;font-size:11.5px;color:#2F6B5A">01</span><span style="font-family:'Instrument Serif',serif;font-size:clamp(26px,2.6vw,36px);line-height:1.05">Law</span><span style="grid-column:{{ roomSpan }};font-size:16px;line-height:1.6;color:#34322B">Read the fine print. Regulation isn’t an obstacle to design; it’s part of the material. That’s why compliance-heavy products don’t scare me.</span></div>
+      <div data-reveal="1" style="display:grid;grid-template-columns:{{ roomCols }};column-gap:clamp(20px,6vw,112px);row-gap:12px;padding:26px 0;border-bottom:1px solid #D9D3C5;align-items:center;transition:background-color .3s,padding .35s cubic-bezier(.2,.8,.2,1),box-shadow .3s" style-hover="background:#ECE7DB;padding-left:16px;box-shadow:inset 3px 0 0 #7A4E7E"><span style="font-family:'Geist Mono',monospace;font-size:11.5px;color:#7A4E7E">02</span><span style="font-family:'Instrument Serif',serif;font-size:clamp(26px,2.6vw,36px);line-height:1.05">International business development</span><span style="grid-column:{{ roomSpan }};font-size:16px;line-height:1.6;color:#34322B">Every stakeholder wants something different. Good strategy finds the version that serves all of them, and says so in their language.</span></div>
+      <div data-reveal="1" style="display:grid;grid-template-columns:{{ roomCols }};column-gap:clamp(20px,6vw,112px);row-gap:12px;padding:26px 0;border-bottom:1px solid #D9D3C5;align-items:center;transition:background-color .3s,padding .35s cubic-bezier(.2,.8,.2,1),box-shadow .3s" style-hover="background:#ECE7DB;padding-left:16px;box-shadow:inset 3px 0 0 #87590F"><span style="font-family:'Geist Mono',monospace;font-size:11.5px;color:#87590F">03</span><span style="font-family:'Instrument Serif',serif;font-size:clamp(26px,2.6vw,36px);line-height:1.05">MFA, Design &amp; Technology</span><span style="grid-column:{{ roomSpan }};font-size:16px;line-height:1.6;color:#34322B">Prototype with your hands, and test before you trust. Along the way came a love of kinetic sculpture and physical computing.</span></div>
+      <div data-reveal="1" style="display:grid;grid-template-columns:{{ roomCols }};column-gap:clamp(20px,6vw,112px);row-gap:12px;padding:26px 0;border-bottom:1px solid #D9D3C5;align-items:center;transition:background-color .3s,padding .35s cubic-bezier(.2,.8,.2,1),box-shadow .3s" style-hover="background:#ECE7DB;padding-left:16px;box-shadow:inset 3px 0 0 #3D5A99"><span style="font-family:'Geist Mono',monospace;font-size:11.5px;color:#3D5A99">04</span><span style="font-family:'Instrument Serif',serif;font-size:clamp(26px,2.6vw,36px);line-height:1.05">Gallagher &amp; Associates · Rockwell Group</span><span style="grid-column:{{ roomSpan }};font-size:16px;line-height:1.6;color:#34322B">Award-winning museum and spatial experiences, from Mississippi to Hudson Yards. Design for people in motion who will never read the instructions.</span></div>
+      <div data-reveal="1" style="display:grid;grid-template-columns:{{ roomCols }};column-gap:clamp(20px,6vw,112px);row-gap:12px;padding:26px 0;border-bottom:1px solid #D9D3C5;align-items:center;transition:background-color .3s,padding .35s cubic-bezier(.2,.8,.2,1),box-shadow .3s" style-hover="background:#ECE7DB;padding-left:16px;box-shadow:inset 3px 0 0 #BD431B"><span style="font-family:'Geist Mono',monospace;font-size:11.5px;color:#BD431B">05</span><span style="font-family:'Instrument Serif',serif;font-size:clamp(26px,2.6vw,36px);line-height:1.05;color:#BD431B">Synechron</span><span style="grid-column:{{ roomSpan }};font-size:16px;line-height:1.6;color:#16150F">High-stakes software for AI, insurance and financial services. Running validation sprints, mapping workflows, and helping secure executive funding.</span></div>
+    </div>
+  </section>
+
+  <section style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,120px) clamp(20px,4vw,48px) 0">
+    <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5E5A50">The toolkit</span>
+    <div id="cr-bring" style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1px;background:#D9D3C5;border:1px solid #D9D3C5">
+      <div data-reveal="1" data-stagger="0" style="background:#F4F1EA;padding:28px;display:flex;flex-direction:column;gap:10px;transition:background-color .3s,box-shadow .3s" style-hover="background:#FBF9F4;box-shadow:inset 0 -3px 0 #BD431B"><span style="font-family:'Instrument Serif',serif;font-size:28px;line-height:1.05">Information architecture</span><span style="font-size:15px;line-height:1.55;color:#5E5A50">Mental models, taxonomies, filtering logic, permissions. Consolidating fragmented legacy ecosystems into one structure.</span></div>
+      <div data-reveal="1" data-stagger="1" style="background:#F4F1EA;padding:28px;display:flex;flex-direction:column;gap:10px;transition:background-color .3s,box-shadow .3s" style-hover="background:#FBF9F4;box-shadow:inset 0 -3px 0 #2F6B5A"><span style="font-family:'Instrument Serif',serif;font-size:28px;line-height:1.05">Research &amp; validation</span><span style="font-size:15px;line-height:1.55;color:#5E5A50">Generative and human-centered research, usability and A/B testing, data synthesis that enables decisions.</span></div>
+      <div data-reveal="1" data-stagger="2" style="background:#F4F1EA;padding:28px;display:flex;flex-direction:column;gap:10px;transition:background-color .3s,box-shadow .3s" style-hover="background:#FBF9F4;box-shadow:inset 0 -3px 0 #3D5A99"><span style="font-family:'Instrument Serif',serif;font-size:28px;line-height:1.05">Executive facilitation</span><span style="font-size:15px;line-height:1.55;color:#5E5A50">Workshops and stakeholder alignment that end in decisions, and in funding for financial and GenAI initiatives.</span></div>
+      <div data-reveal="1" data-stagger="3" style="background:#F4F1EA;padding:28px;display:flex;flex-direction:column;gap:10px;transition:background-color .3s,box-shadow .3s" style-hover="background:#FBF9F4;box-shadow:inset 0 -3px 0 #87590F"><span style="font-family:'Instrument Serif',serif;font-size:28px;line-height:1.05">AI &amp; LLM products</span><span style="font-size:15px;line-height:1.55;color:#5E5A50">Research frameworks for responsible, user-centered LLM applications in global financial institutions.</span></div>
+      <div data-reveal="1" data-stagger="4" style="background:#F4F1EA;padding:28px;display:flex;flex-direction:column;gap:10px;transition:background-color .3s,box-shadow .3s" style-hover="background:#FBF9F4;box-shadow:inset 0 -3px 0 #7A4E7E"><span style="font-family:'Instrument Serif',serif;font-size:28px;line-height:1.05">Validation sprints</span><span style="font-size:15px;line-height:1.55;color:#5E5A50">4-week sprints that turn a department bottleneck into a fundable, testable product.</span></div>
+      <div data-reveal="1" data-stagger="5" style="background:#F4F1EA;padding:28px;display:flex;flex-direction:column;gap:10px;transition:background-color .3s,box-shadow .3s" style-hover="background:#FBF9F4;box-shadow:inset 0 -3px 0 #BD431B"><span style="font-family:'Instrument Serif',serif;font-size:28px;line-height:1.05">Prototyping &amp; storytelling</span><span style="font-size:15px;line-height:1.55;color:#5E5A50">Low/mid-fi and clickable prototypes, plus narrated product films for the executive room.</span></div>
+      <div data-reveal="1" data-stagger="6" style="background:#F4F1EA;padding:28px;display:flex;flex-direction:column;gap:10px;transition:background-color .3s,box-shadow .3s" style-hover="background:#FBF9F4;box-shadow:inset 0 -3px 0 #2F6B5A"><span style="font-family:'Instrument Serif',serif;font-size:28px;line-height:1.05">Journeys &amp; personas</span><span style="font-size:15px;line-height:1.55;color:#5E5A50">User journey mapping, persona development and systems thinking across complex, regulated flows.</span></div>
+      <div data-reveal="1" data-stagger="7" style="background:#F4F1EA;padding:28px;display:flex;flex-direction:column;gap:10px;transition:background-color .3s,box-shadow .3s" style-hover="background:#FBF9F4;box-shadow:inset 0 -3px 0 #3D5A99"><span style="font-family:'Instrument Serif',serif;font-size:28px;line-height:1.05">Design systems &amp; delivery</span><span style="font-size:15px;line-height:1.55;color:#5E5A50">Guiding UI designers, partnering with engineering and QA for fidelity and accessibility compliance.</span></div>
+      <div data-reveal="1" data-stagger="8" style="background:#F4F1EA;padding:28px;display:flex;flex-direction:column;gap:10px;transition:background-color .3s,box-shadow .3s" style-hover="background:#FBF9F4;box-shadow:inset 0 -3px 0 #87590F"><span style="font-family:'Instrument Serif',serif;font-size:28px;line-height:1.05">Physical–digital</span><span style="font-size:15px;line-height:1.55;color:#5E5A50">Installations, kiosks and spaces where screens meet bodies. SEGD Global Design Award.</span></div>
+      <div style="grid-column:{{ betaSpan }};background:#16150F;color:#F4F1EA;padding:28px 32px;display:flex;flex-direction:column;justify-content:center;gap:10px;min-height:150px"><span style="font-family:'Instrument Serif',serif;font-size:clamp(34px,3.4vw,48px);line-height:1">Always in <em style="color:#E8764F">beta.</em><span data-blink="1" style="display:inline-block;width:0.05em;height:0.78em;background:#E8764F;margin-left:0.1em;vertical-align:-0.04em"></span></span><span style="font-size:15px;line-height:1.55;color:#CFC9BB;max-width:440px">Learning something new every day, and putting it<br>to work the next.</span></div>
+    </div>
+    <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center">
+      <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5E5A50;margin-right:6px">Tools</span>
+      <span style="padding:7px 13px;border-radius:999px;border:1px solid #BDB6A6;font-size:14px;cursor:default;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="background:#16150F;color:#F4F1EA;border-color:#16150F;transform:translateY(-2px)">Figma</span>
+      <span style="padding:7px 13px;border-radius:999px;border:1px solid #BDB6A6;font-size:14px;cursor:default;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="background:#16150F;color:#F4F1EA;border-color:#16150F;transform:translateY(-2px)">Miro</span>
+      <span style="padding:7px 13px;border-radius:999px;border:1px solid #BDB6A6;font-size:14px;cursor:default;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="background:#16150F;color:#F4F1EA;border-color:#16150F;transform:translateY(-2px)">Mural</span>
+      <span style="padding:7px 13px;border-radius:999px;border:1px solid #BDB6A6;font-size:14px;cursor:default;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="background:#16150F;color:#F4F1EA;border-color:#16150F;transform:translateY(-2px)">Jira</span>
+      <span style="padding:7px 13px;border-radius:999px;border:1px solid #BDB6A6;font-size:14px;cursor:default;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="background:#16150F;color:#F4F1EA;border-color:#16150F;transform:translateY(-2px)">Trello</span>
+      <span style="padding:7px 13px;border-radius:999px;border:1px solid #BDB6A6;font-size:14px;cursor:default;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="background:#16150F;color:#F4F1EA;border-color:#16150F;transform:translateY(-2px)">Agile / Scrum</span>
+      <span style="padding:7px 13px;border-radius:999px;border:1px solid #BDB6A6;font-size:14px;cursor:default;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="background:#16150F;color:#F4F1EA;border-color:#16150F;transform:translateY(-2px)">Claude</span>
+      <span style="padding:7px 13px;border-radius:999px;border:1px solid #BDB6A6;font-size:14px;cursor:default;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="background:#16150F;color:#F4F1EA;border-color:#16150F;transform:translateY(-2px)">GenAI tooling</span>
+    </div>
+    <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px;border-top:1px solid #D9D3C5;padding-top:24px">
+      <div data-reveal="1" data-stagger="0" style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#BD431B">Awards</span><span style="font-size:15px;line-height:1.55">Gold Star Award (two-time), Synechron · SEGD Global Design Award &amp; Honor Award for Digital Experience Content · Dean’s Scholarship, Parsons</span></div>
+      <div data-reveal="1" data-stagger="1" style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#BD431B">Education</span><span style="font-size:15px;line-height:1.55">MFA Design &amp; Technology, Parsons · BA Liberal Arts, Eugene Lang College · Law coursework, Universidad Internacional del Ecuador</span></div>
+      <div data-reveal="1" data-stagger="2" style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#BD431B">Teaching</span><span style="font-size:15px;line-height:1.55">Guest lecturer in Design &amp; Coding at Parsons School of Design</span></div>
+    </div>
+  </section>
+
+  <section style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,120px) clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5E5A50">Off the clock, the same focus</span>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <span style="padding:10px 16px;border-radius:999px;border:1px solid #BDB6A6;font-size:15px;cursor:default;transition:background-color .25s,color .25s,border-color .25s,transform .35s cubic-bezier(.3,1.6,.5,1)" style-hover="background:#BD431B;color:#F4F1EA;border-color:#BD431B;transform:rotate(-4deg) scale(1.04)">Muay Thai</span>
+        <span style="padding:10px 16px;border-radius:999px;border:1px solid #BDB6A6;font-size:15px;cursor:default;transition:background-color .25s,color .25s,border-color .25s,transform .35s cubic-bezier(.3,1.6,.5,1)" style-hover="background:#3D5A99;color:#F4F1EA;border-color:#3D5A99;transform:rotate(3deg) scale(1.04)">Mezzo-soprano in chorus groups</span>
+        <span style="padding:10px 16px;border-radius:999px;border:1px solid #BDB6A6;font-size:15px;cursor:default;transition:background-color .25s,color .25s,border-color .25s,transform .35s cubic-bezier(.3,1.6,.5,1)" style-hover="background:#87590F;color:#F4F1EA;border-color:#87590F;transform:rotate(-3deg) scale(1.04)">Cooking world cuisines</span>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end">
+      <a href="assets/Cecile-Roca-Resume.pdf" target="_blank" style="background:#16150F;color:#F4F1EA;padding:14px 24px;border-radius:999px;font-size:15px;white-space:nowrap;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="background:#BD431B;color:#F4F1EA;transform:translateY(-2px)" style-active="transform:scale(0.97)">Download résumé ↓</a>
+      <a href="https://www.linkedin.com/in/ceciler/" target="_blank" style="padding:14px 24px;border-radius:999px;font-size:15px;border:1px solid #BDB6A6;white-space:nowrap;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="border-color:#16150F;transform:translateY(-2px)" style-active="transform:scale(0.97)">LinkedIn ↗</a>
+    </div>
+  </section>
+</main>
+</sc-if>
+
+<sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+<main id="main" tabindex="-1" data-screen-label="Contact" style="max-width:1320px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,4vw,48px) clamp(72px,9vw,120px);display:flex;flex-direction:column;gap:clamp(40px,5vw,56px)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,72px);align-items:end">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <span data-in="rise:0" style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5E5A50">Contact</span>
+      <h1 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(56px,8vw,128px);line-height:0.92;letter-spacing:-0.025em;text-wrap:balance"><span data-in="word:120" style="display:inline-block">Got</span> <span data-in="word:190" style="display:inline-block">a</span> <span data-in="word:260" style="display:inline-block">tangle?</span> <span data-in="word:360" style="display:inline-block"><em style="color:#BD431B">Let’s</em></span> <span data-in="word:430" style="display:inline-block"><em style="color:#BD431B">untangle</em></span> <span data-in="word:500" style="display:inline-block"><em style="color:#BD431B">it.</em></span></h1>
+    </div>
+    <div data-in="rise:600" style="display:flex;flex-direction:column;gap:20px;justify-self:end;width:100%;max-width:440px">
+      <p style="margin:0;font-size:18px;line-height:1.6;color:#34322B;text-wrap:pretty">Pick what it’s about, then choose how to reach me. The email opens with the subject already filled in.</p>
+      <span style="display:flex;gap:10px;align-items:center;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5E5A50"><span style="position:relative;width:9px;height:9px;flex:none"><span data-pulse="1" style="position:absolute;inset:0;border-radius:50%;border:1.5px solid #2F6B5A"></span><span style="position:absolute;inset:0;border-radius:50%;background:#2F6B5A"></span></span><span>{{ nycTime }} in New York</span></span>
+    </div>
+  </div>
+
+  <div data-in="rise:700" style="display:flex;flex-direction:column;gap:14px;border-top:1px solid #16150F;padding-top:24px">
+    <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5E5A50">What’s it about?</span>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <sc-for list="{{ topics }}" as="t" hint-placeholder-count="4">
+        <button onClick="{{ t.pick }}" aria-pressed="{{ t.on }}" style="font:inherit;font-size:14px;padding:8px 16px;min-height:44px;border-radius:999px;cursor:pointer;border:1px solid {{ t.bd }};background:{{ t.bg }};color:{{ t.fg }};white-space:nowrap;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="transform:translateY(-2px)" style-active="transform:scale(0.97)">{{ t.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:{{ cardCols }};gap:20px">
+      <div data-in="rise:850" style="display:flex">
+        <div onMouseMove="{{ cardMove }}" onMouseLeave="{{ cardLeave }}" style="position:relative;flex:1;min-height:clamp(280px,28vw,360px);border-radius:6px;background:#BD431B;color:#F4F1EA;padding:clamp(24px,2.4vw,32px);display:flex;flex-direction:column;justify-content:space-between;gap:32px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s">
+          <a href="{{ mailHref }}" target="_blank" rel="noopener" onClick="{{ openMail }}" aria-label="Email Cecile at cecile@cecileroca.com" style="position:absolute;inset:0;z-index:1;border-radius:6px"></a>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+            <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#F4F1EA">01 · Email</span>
+            <span data-arrow="1" style="width:56px;height:56px;border-radius:50%;background:#F4F1EA;color:#BD431B;display:flex;align-items:center;justify-content:center;font-size:22px;flex:none;transform:rotate(-45deg);transition:transform .5s cubic-bezier(.3,1.5,.5,1)">→</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span style="font-family:'Instrument Serif',serif;font-size:clamp(48px,4.6vw,68px);line-height:0.95;letter-spacing:-0.015em">Email</span>
+            <span style="font-size:17px;word-break:break-all">cecile@cecileroca.com</span>
+            <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#F4F1EA">Subject: {{ subject }}</span>
+            <div style="position:relative;z-index:2;display:flex;gap:8px;flex-wrap:wrap;margin-top:8px"><button onClick="{{ copyEmail }}" aria-live="polite" style="font:inherit;font-size:14px;padding:8px 16px;min-height:44px;border-radius:999px;cursor:pointer;border:1px solid #F4F1EA;background:{{ copyBg }};color:{{ copyFg }};white-space:nowrap;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="background:#F4F1EA;color:#BD431B" style-active="transform:scale(0.97)">{{ copyLabel }}</button><a href="{{ gmailHref }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;font-size:14px;line-height:1.15;padding:8px 16px;border-radius:999px;border:1px solid #F4F1EA;color:#F4F1EA;white-space:nowrap;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="background:#F4F1EA;color:#BD431B" style-active="transform:scale(0.97)">Gmail ↗</a><a href="{{ outlookHref }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;font-size:14px;line-height:1.15;padding:8px 16px;border-radius:999px;border:1px solid #F4F1EA;color:#F4F1EA;white-space:nowrap;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="background:#F4F1EA;color:#BD431B" style-active="transform:scale(0.97)">Outlook ↗</a></div>
+          </div>
+        </div>
+      </div>
+      <div data-in="rise:950" style="display:flex">
+        <div onMouseMove="{{ cardMove }}" onMouseLeave="{{ cardLeave }}" style="position:relative;flex:1;min-height:clamp(280px,28vw,360px);border-radius:6px;background:#16150F;color:#F4F1EA;padding:clamp(24px,2.4vw,32px);display:flex;flex-direction:column;justify-content:space-between;gap:32px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s">
+          <a href="assets/Cecile-Roca-Resume.pdf" target="_blank" rel="noopener" aria-label="Open Cecile’s résumé (PDF, new tab)" style="position:absolute;inset:0;z-index:1;border-radius:6px"></a>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+            <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#F4F1EA">02 · Résumé</span>
+            <span data-arrow="1" style="width:56px;height:56px;border-radius:50%;background:#F4F1EA;color:#16150F;display:flex;align-items:center;justify-content:center;font-size:22px;flex:none;transform:rotate(-45deg);transition:transform .5s cubic-bezier(.3,1.5,.5,1)">→</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span style="font-family:'Instrument Serif',serif;font-size:clamp(48px,4.6vw,68px);line-height:0.95;letter-spacing:-0.015em">Résumé</span>
+            <span style="font-size:17px">Law, business, museums, enterprise AI</span>
+            <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#CFC9BB">PDF · opens in a new tab</span>
+            
+          </div>
+        </div>
+      </div>
+      <div data-in="rise:1050" style="display:flex">
+        <div onMouseMove="{{ cardMove }}" onMouseLeave="{{ cardLeave }}" style="position:relative;flex:1;min-height:clamp(280px,28vw,360px);border-radius:6px;background:#3D5A99;color:#F4F1EA;padding:clamp(24px,2.4vw,32px);display:flex;flex-direction:column;justify-content:space-between;gap:32px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s">
+          <a href="https://www.linkedin.com/in/ceciler/" target="_blank" rel="noopener" aria-label="Open Cecile’s LinkedIn profile (new tab)" style="position:absolute;inset:0;z-index:1;border-radius:6px"></a>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+            <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#F4F1EA">03 · LinkedIn</span>
+            <span data-arrow="1" style="width:56px;height:56px;border-radius:50%;background:#F4F1EA;color:#3D5A99;display:flex;align-items:center;justify-content:center;font-size:22px;flex:none;transform:rotate(-45deg);transition:transform .5s cubic-bezier(.3,1.5,.5,1)">→</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span style="font-family:'Instrument Serif',serif;font-size:clamp(48px,4.6vw,68px);line-height:0.95;letter-spacing:-0.015em">LinkedIn</span>
+            <span style="font-size:17px">linkedin.com/in/ceciler</span>
+            <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#F4F1EA">Opens in a new tab</span>
+            
+          </div>
+        </div>
+      </div>
+  </div>
+</main>
+</sc-if>
+
+<sc-if value="{{ notContact }}" hint-placeholder-val="{{ true }}">
+<footer id="site-footer" data-screen-label="Footer" style="background:#BD431B;color:#F4F1EA">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,120px) clamp(20px,4vw,48px) 36px;display:flex;flex-direction:column;gap:40px">
+    <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase">Got a tangle? Need someone to bridge engineering, business and law?</span>
+    <a href="#contact" onClick="{{ goContact }}" style="color:#F4F1EA;font-family:'Instrument Serif',serif;font-size:clamp(56px,9vw,136px);line-height:0.95;letter-spacing:-0.02em;align-self:flex-start;transition:color .25s" style-hover="color:#16150F">Let’s talk →</a>
+    <div style="display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px;border-top:1px solid rgba(244,241,234,0.5);padding-top:22px">
+      <span>© 2026 Cecile Roca</span>
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <a href="mailto:cecile@cecileroca.com" style="color:#F4F1EA;transition:color .2s" style-hover="color:#16150F">cecile@cecileroca.com</a>
+        <a href="https://www.linkedin.com/in/ceciler/" target="_blank" style="color:#F4F1EA;transition:color .2s" style-hover="color:#16150F">LinkedIn ↗</a>
+        <a href="assets/Cecile-Roca-Resume.pdf" target="_blank" style="color:#F4F1EA;transition:color .2s" style-hover="color:#16150F">Résumé ↗</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</sc-if>
+</div>
+
+<sc-if value="{{ lbOn }}" hint-placeholder-val="{{ false }}">
+  <div ref="{{ lbRef }}" onScroll="{{ lbScroll }}" onClick="{{ lbClose }}" role="dialog" aria-modal="true" aria-label="Image viewer" style="position:fixed;inset:0;z-index:200;background:rgba(22,21,15,0.92);overflow:auto;padding:64px clamp(12px,3vw,40px) 40px;cursor:zoom-out">
+    <button onClick="{{ lbClose }}" aria-label="Close" style="position:fixed;top:16px;right:18px;width:40px;height:40px;border-radius:50%;border:1px solid #F4F1EA;background:transparent;color:#F4F1EA;font-size:18px;cursor:pointer;transition:background-color .25s,color .25s,border-color .25s,transform .25s" style-hover="background:#BD431B;border-color:#BD431B" style-active="transform:scale(0.97)">✕</button>
+    <sc-if value="{{ lbm.on }}" hint-placeholder-val="{{ false }}"><div onClick="{{ lbm.jump }}" title="Jump to area" style="position:fixed;top:16px;right:72px;width:{{ lbm.w }};height:{{ lbm.h }};background-color:#FDFCFB;background-image:{{ lbm.bg }};background-size:100% 100%;background-repeat:no-repeat;border:1px solid #16150F;border-radius:4px;box-shadow:0 6px 20px rgba(22,21,15,0.22);cursor:crosshair;overflow:hidden;z-index:3"><div style="position:absolute;left:{{ lbm.vx }};top:{{ lbm.vy }};width:{{ lbm.vw }};height:{{ lbm.vh }};border:2px solid #BD431B;background:rgba(196,72,31,0.14);box-sizing:border-box;pointer-events:none"></div></div></sc-if>
+    <figure onClick="{{ lbStop }}" style="margin:0 auto;max-width:{{ lbMax }};width:max-content;min-width:0;display:flex;flex-direction:column;gap:12px;cursor:default">
+      {{ lbImg }}
+      <figcaption style="font-family:'Geist Mono',monospace;font-size:12px;color:#CFC9BB">{{ lbCap }} · {{ lbHint }}</figcaption>
+    </figure>
+  </div>
+</sc-if></x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const CH=[['Legal entity','L'],['KYC status','L'],['Ownership','L'],['Jurisdiction','L'],['Permissions','L'],['Accounts','O'],['Transactions','O'],['Products','O'],['Risk rating','O'],['Documents','O'],['Contacts','R'],['Interactions','R'],['Favorites','R'],['Coverage team','R'],['Notes','R']];
+const COLX={L:4,O:37,R:69};
+const rnd=i=>{const x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x);};
+const clamp=v=>Math.max(0,Math.min(1,v));
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const IMG='https://images.squarespace-cdn.com/content/v1/5cc1b864fd738e0001d3cf75/';
+const SHOTS=[['Dashboard'],['Search by name'],['Underlying records'],['Reorder results']];
+const STEPS=[['WEEK 01','Set the stage','Personas, workshop cadence, SMEs and test users.'],['WEEK 02','Map the journey','Pain points scoped into an MVP flow.'],['WEEK 03','Align & validate','Execs approve the mental model, and sketches get tested.'],['WEEK 04','Structure','Wireframes plus design-system foundations.'],['WEEK 05','Prototype & test','High-fidelity, tested, refined.'],['WEEK 06','Green-light','A narrated film makes the business case.']];
+const FEAT=[
+ {slug:'scv',n:'01',kicker:'Information architecture · EMEA bank',title:'Single Client View',note:'Eight platforms, one streamlined workflow.',dek:'Client data lived in eight systems. A new search, filtering and permissions model brought it together, designed and validated in six weeks.',m:[['8 → 1','platforms'],['Weeks → days','research tasks'],['Funded','by executives']],img:'assets/scv/feature.gif',cap:'SCV prototype · multi-dataset search'},
+ {slug:'choro',n:'02',kicker:'AI knowledge management · Synechron',title:'Chōro',note:'Born in a self-designed Shark Tank.',dek:'Project managers needed 16 apps and 11 processes to find one answer. An AI searcher now finds it and summarizes it.',m:[['80%','efficiency gain'],['2 mo → 2 wk','report creation'],['Funded','in development']],img:'assets/choro/search.gif',cap:'Chōro prototype · summarized answers'},
+ {slug:'aida',n:'03',kicker:'AI desktop assistant · Synechron',title:'AIDA',note:'Chōro’s idea, scaled to two more departments.',dek:'Two teams were jumping between eight tools. Four weeks later, one AI assistant for search, analysis and reporting had taken shape. It has since launched.',m:[['75%','more efficiency'],['8 → 1','apps'],['Launched','in production']],img:'assets/aida/blueprint.gif',cap:'AIDA · product blueprint'}];
+const SPACES=[
+ {slug:'hudson',img:'assets/hudson/skyline.webp',title:'The Residences at Hudson Yards',client:'Rockwell Group',note:'Testing moved 34 screens from east–west to north–south.',ph:'Hudson Yards experience center'},
+ {slug:'max',img:'assets/max/hall-of-fame.webp',title:'Mississippi Arts & Entertainment Experience',client:'Gallagher & Associates',note:'Paper prototypes caught physical flaws before fabrication.',ph:'The MAX · Juke Joint stage'},
+ {slug:'jj',img:'assets/jj/jj1.webp',title:'Johnson & Johnson Corporate Museum',client:'Gallagher & Associates',note:'Three exhibits tested, synthesized, and made consistent.',ph:'J&J · Global Community'},
+ {slug:'witte',img:'assets/witte/dino-lab-kiosk.webp',title:'Witte Museum, San Antonio',client:'Gallagher & Associates',note:'Six installations: digital digs, 3D dinosaurs, rock art.',ph:'Witte · Dinosaur Lab'},
+ {slug:'fab',img:'assets/water/hall-fan.webp',title:'Kinetic sculpture',client:'Fabrication · with Hypersonic',note:'Water Ripples at Grand Central, Exit Vestibule East at the Newark Museum.',ph:'Water Ripples · Vanderbilt Hall'}];
+const SCV={title:'Single Client View',short:'Advanced data filtering & relationship management',client:'SMBC EMEA',cat:'Enterprise & AI'};
+const CATS=['All','Enterprise & AI','Research & strategy','Spatial & museum','Fabrication'];
+const CC={'Enterprise & AI':'#BD431B','Research & strategy':'#2F6B5A','Spatial & museum':'#3D5A99','Fabrication':'#87590F'};
+const PV=['scv','choro','aida','bank'];
+
+class Component extends DCLogic {
+  flowRef=React.createRef();
+  miniTick(){if(this._mt)return;this._mt=requestAnimationFrame(()=>{this._mt=null;this.forceUpdate();});}
+  mini(el,z,src){const off={on:false};if(!el||!(z>1))return off;const img=el.querySelector('img');if(!img||!img.naturalWidth)return off;
+    const r=img.getBoundingClientRect(),c=el===this.lbRef.current?{left:0,top:0,right:window.innerWidth,bottom:window.innerHeight}:el.getBoundingClientRect();if(!r.width)return off;
+    const W=Math.min(200,Math.max(120,(c.right-c.left)*0.18)),H=Math.max(40,Math.min(220,W*r.height/r.width)),Wf=H===W*r.height/r.width?W:H*r.width/r.height;
+    const x1=Math.max(r.left,c.left),x2=Math.min(r.right,c.right),y1=Math.max(r.top,c.top),y2=Math.min(r.bottom,c.bottom);const p=v=>(Math.max(0,Math.min(1,v))*100).toFixed(2)+'%';
+    return{on:true,bg:'url("'+src+'")',w:Wf+'px',h:H+'px',vx:p((x1-r.left)/r.width),vy:p((y1-r.top)/r.height),vw:p((x2-x1)/r.width),vh:p((y2-y1)/r.height),
+      jump:e=>{e.stopPropagation();const m=e.currentTarget.getBoundingClientRect();const fx=(e.clientX-m.left)/m.width,fy=(e.clientY-m.top)/m.height;const rr=img.getBoundingClientRect();const cx=(c.left+c.right)/2,cy=(c.top+c.bottom)/2;el.scrollLeft+=rr.left+fx*rr.width-cx;el.scrollTop+=rr.top+fy*rr.height-cy;}};}
+  lbRef=React.createRef();
+  lbDown=e=>{const el=this.lbRef.current;if(!el)return;this._lbd={x:e.clientX,y:e.clientY,l:el.scrollLeft,t:el.scrollTop,moved:false};};
+  lbMove=e=>{const d=this._lbd;if(!d||!this.state.lbZ||e.pointerType!=='mouse')return;const dx=e.clientX-d.x,dy=e.clientY-d.y;if(!d.moved&&Math.hypot(dx,dy)<5)return;if(!d.moved){d.moved=true;this.forceUpdate();}const el=this.lbRef.current;el.scrollLeft=d.l-dx;el.scrollTop=d.t-dy;};
+  lbUp=e=>{const d=this._lbd;this._lbd=null;if(!d)return;if(d.moved){this.forceUpdate();return;}const img=e.currentTarget,el=this.lbRef.current;if(this.state.lbZ){this.setState({lbZ:null},()=>{el.scrollTop=0;el.scrollLeft=0;});return;}
+    const r=img.getBoundingClientRect();const fx=(e.clientX-r.left)/r.width,fy=(e.clientY-r.top)/r.height;const W=Math.round(Math.min(r.width*8,Math.max(img.naturalWidth||0,r.width*2.5)));
+    this.setState({lbZ:W},()=>requestAnimationFrame(()=>{const n=img.getBoundingClientRect();el.scrollLeft+=n.left+fx*n.width-e.clientX;el.scrollTop+=n.top+fy*n.height-e.clientY;}));};
+  flowZoomAt(z,px,py){const el=this.flowRef.current;if(!el)return;const old=this.state.flowZ||1;z=Math.max(1,Math.min(8,z));const cx=(el.scrollLeft+px)/old,cy=(el.scrollTop+py)/old;this.setState({flowZ:z},()=>{el.scrollLeft=cx*z-el.clientWidth/2;el.scrollTop=cy*z-el.clientHeight/2;});}
+  flowZoom(z){const el=this.flowRef.current;const old=this.state.flowZ||1;z=Math.max(1,Math.min(8,z));if(!el){this.setState({flowZ:z});return;}const cx=(el.scrollLeft+el.clientWidth/2)/old,cy=(el.scrollTop+el.clientHeight/2)/old;this.setState({flowZ:z},()=>{el.scrollLeft=cx*z-el.clientWidth/2;el.scrollTop=cy*z-el.clientHeight/2;});}
+  flowVals(){const z=this.state.flowZ||1;return{flowRef:this.flowRef,flowW:(z*100)+'%',flowPct:Math.round(z*100)+'%',flowCursor:z>1?(this._drag&&this._drag.moved?'grabbing':'zoom-out'):'zoom-in',
+    flowScroll:()=>this.miniTick(),fm:this.mini(this.flowRef.current,z,'assets/scv/user-flow.svg'),flowIn:()=>this.flowZoom(z*1.5),flowOut:()=>this.flowZoom(z/1.5),flowReset:()=>this.flowZoom(1),
+    flowDown:e=>{const el=this.flowRef.current;this._drag={x:e.clientX,y:e.clientY,l:el.scrollLeft,t:el.scrollTop,moved:false};},
+    flowMove:e=>{const d=this._drag;if(!d||e.pointerType!=='mouse'||z<=1)return;const dx=e.clientX-d.x,dy=e.clientY-d.y;if(!d.moved&&Math.hypot(dx,dy)<5)return;if(!d.moved){d.moved=true;this.forceUpdate();}const el=this.flowRef.current;el.scrollLeft=d.l-dx;el.scrollTop=d.t-dy;},
+    flowUp:e=>{const d=this._drag;this._drag=null;if(!d)return;if(d.moved){this.forceUpdate();return;}if(e.type==='pointerleave')return;const el=this.flowRef.current;const img=el.querySelector('img');const r=el.getBoundingClientRect();const px=e.clientX-r.left,py=e.clientY-r.top;if(z>1.05){this.flowZoomAt(1,px,py);return;}const read=img&&img.naturalWidth?img.naturalWidth/el.clientWidth:4;this.flowZoomAt(Math.max(3.5,Math.min(8,read*1.1)),px,py);}};}
+  state={view:'home',slug:null,thr:0,feat:0,proc:0,wide:true,coverIn:false,shot:0,layer:'sketch',filter:'All',hov:null,px:0,py:0,ready:false};
+  componentDidMount(){
+    document.documentElement.lang='en';
+    this.parseHash();setTimeout(()=>this.a11yNav(false),150);
+    this.clk=setInterval(()=>this.forceUpdate(),30000);
+    this.onLbKey=e=>{if(e.key==='Escape'&&this.state.lb)this.setState({lb:null,lbZ:null});};window.addEventListener('keydown',this.onLbKey);
+    const wait=()=>{if(window.CR_CASES)this.setState({ready:true});else this.wt=setTimeout(wait,50);};wait();
+    this.onResize=()=>{const w=window.innerWidth>=900;if(w!==this.state.wide)this.setState({wide:w});
+      const g=document.getElementById('cr-bring');if(g){const cw=g.clientWidth;const cols=Math.max(1,Math.floor((cw+1)/(Math.min(280,cw)+1)));const n=g.children.length-1;const r=n%cols;const sp='span '+(r?cols-r:cols);if(sp!==this.state.betaSpan)this.setState({betaSpan:sp});}};this.onResize();
+    window.addEventListener('resize',this.onResize);
+    if(window.ResizeObserver){this.ro=new ResizeObserver(()=>this.onResize());this.ro.observe(document.documentElement);}
+    this.rt=setTimeout(this.onResize,400);
+    this.onScroll=()=>{if(this.raf)return;this.raf=requestAnimationFrame(()=>{this.raf=null;this.tick();});};
+    window.addEventListener('scroll',this.onScroll,{passive:true});
+    this.ct=setTimeout(()=>this.setState({coverIn:true}),80);
+    this.enter();setTimeout(()=>{this.enter();this.reveal();this.tick();},100);
+  }
+  enter(){
+    if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    const E='cubic-bezier(.2,.7,.2,1)';
+    const K={rise:[{opacity:0,transform:'translateY(22px)'},{opacity:1,transform:'none'}],word:[{opacity:0,transform:'translateY(0.5em) rotate(3deg)'},{opacity:1,transform:'none'}],line:[{transform:'scaleX(0)'},{transform:'scaleX(1)'}],wipe:[{clipPath:'inset(0 0 100% 0)'},{clipPath:'inset(0 0 0% 0)'}],zoom:[{transform:'scale(1.2)'},{transform:'scale(1)'}],fade:[{opacity:0},{opacity:1}]};
+    const once=(sel,f)=>document.querySelectorAll(sel).forEach(el=>{if(el.dataset.entered)return;el.dataset.entered='1';f(el);});
+    once('[data-in]',el=>{const [k,d]=el.dataset.in.split(':');const long=k==='wipe'||k==='zoom';el.animate(K[k]||K.rise,{duration:long?1400:900,delay:+d||0,easing:long?'cubic-bezier(.7,0,.2,1)':E,fill:'backwards'});});
+    document.querySelectorAll('[data-stag-list]').forEach(l=>{const base=l.dataset.ran?0:(+l.dataset.stagList||0);l.dataset.ran='1';let k=0;Array.from(l.children).forEach(el=>{if(el.dataset.entered)return;el.dataset.entered='1';el.animate(K.rise,{duration:700,delay:base+Math.min(k++,14)*35,easing:E,fill:'backwards'});});});
+    once('[data-pulse]',el=>el.animate([{transform:'scale(1)',opacity:0.9},{transform:'scale(1.75)',opacity:0}],{duration:2400,delay:2200,iterations:Infinity,easing:'ease-out',fill:'backwards'}));
+    once('[data-blink]',el=>el.animate([{opacity:1},{opacity:1,offset:0.5},{opacity:0,offset:0.51},{opacity:0}],{duration:1100,iterations:Infinity}));
+  }
+  setupPix(){
+    if(this.pixOn||!window.matchMedia||!matchMedia('(hover:hover) and (pointer:fine)').matches||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    this.pixOn=true;this.pP=0;this.pT=0;
+    this.onPixMove=e=>{this.pmx=e.clientX;this.pmy=e.clientY;this.pixCheck();};
+    this.onPixOut=e=>{if(!e.relatedTarget)this.pixGo(0);};
+    this.onPixScroll=()=>this.pixCheck();
+    window.addEventListener('mousemove',this.onPixMove,{passive:true});
+    document.addEventListener('mouseout',this.onPixOut);
+    window.addEventListener('scroll',this.onPixScroll,{passive:true});
+  }
+  pixBuild(img,w,h){
+    const cs=6,cols=Math.ceil(w/cs),rows=Math.ceil(h/cs);
+    const oc=document.createElement('canvas');oc.width=w;oc.height=h;const ox=oc.getContext('2d',{willReadFrequently:true});ox.drawImage(img,0,0,w,h);
+    let data;try{data=ox.getImageData(0,0,w,h).data;}catch(e){return null;}
+    const lit=new Uint8Array(cols*rows),cells=[];
+    for(let cy=0;cy<rows;cy++)for(let cx=0;cx<cols;cx++){
+      let r=0,g=0,b=0,n=0;const x0=cx*cs,y0=cy*cs;
+      for(let y=y0;y<Math.min(y0+cs,h);y+=2)for(let x=x0;x<Math.min(x0+cs,w);x+=2){const i=(y*w+x)*4;r+=data[i];g+=data[i+1];b+=data[i+2];n++;}
+      r/=n;g/=n;b/=n;const L=0.3*r+0.59*g+0.11*b;if(L<16)continue;
+      lit[cy*cols+cx]=1;const xn=x0/w,rd=Math.random()*0.3;
+      cells.push({x:x0,y:y0,q:Math.min(31,L/8|0),dR:(1-xn)*0.7+rd,dL:xn*0.7+rd});
+    }
+    const idx=cells.map((_,i)=>i);for(let i=idx.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[idx[i],idx[j]]=[idx[j],idx[i]];}
+    cells.forEach((c,i)=>{const o=cells[idx[i]];c.tx=o.x+(Math.random()-0.5)*36;c.ty=o.y+(Math.random()-0.5)*36;
+      const dx=c.tx-c.x,dy=c.ty-c.y,len=Math.hypot(dx,dy)||1,bd=(Math.random()-0.5)*Math.min(200,len*0.7);
+      c.qx=(c.x+c.tx)/2-dy/len*bd;c.qy=(c.y+c.ty)/2+dx/len*bd;c.ph=Math.random()*6.283;});
+    const buckets=[];for(let q=0;q<32;q++)buckets.push([]);cells.forEach((c,i)=>buckets[c.q].push(i));
+    const cols32=buckets.map((_,q)=>{const v=Math.min(255,q*8+4);return 'rgb('+v+','+v+','+v+')';});
+    return {w,h,cs,cols,rows,lit,cells,buckets,cols32};
+    return {w,h,cs,cols,rows,lit,cells};
+  }
+  pixCheck(){
+    const img=document.getElementById('cr-portrait-img');
+    if(!img||!img.complete||!img.naturalWidth||this.state.view!=='home'){this.pixGo(0);return;}
+    const r=img.getBoundingClientRect(),w=Math.round(img.offsetWidth),h=Math.round(img.offsetHeight);
+    if(!this.pB||this.pB.w!==w||this.pB.h!==h||this.pImg!==img){if(this.pP>0)return;this.pImg=img;this.pB=this.pixBuild(img,w,h);if(!this.pB)return;}
+    const B=this.pB,lx=this.pmx-r.left,ly=this.pmy-r.top;let on=false;
+    if(lx>=0&&ly>=0&&lx<r.width&&ly<r.height){const cx=Math.floor(lx/B.cs),cy=Math.floor(ly/B.cs),R=this.pT?5:1;
+      for(let y=cy-R;y<=cy+R&&!on;y++)for(let x=cx-R;x<=cx+R;x++){if(x>=0&&y>=0&&x<B.cols&&y<B.rows&&B.lit[y*B.cols+x]){on=true;break;}}}
+    this.pixGo(on?1:0);
+  }
+  pixGo(t){if(this.pT===t)return;this.pT=t;
+    if(t&&this.pP<=0&&this.pImg){const r=this.pImg.getBoundingClientRect();this.pDir=this.pmx<r.left+r.width/2?'L':'R';}if(!this.pRaf){this.pLast=performance.now();this.pRaf=requestAnimationFrame(this.pixFrame);}}
+  pixFrame=now=>{
+    const dt=Math.min(120,now-this.pLast);this.pLast=now;const dur=this.pT?1500:1300;
+    this.pP=this.pT?Math.min(1,this.pP+dt/dur):Math.max(0,this.pP-dt/dur);
+    const img=this.pImg,B=this.pB;if(!img||!B||!img.isConnected){this.pRaf=null;this.pP=0;return;}
+    let cv=this.pCv;const pad=420;
+    if(!cv||cv.parentElement!==img.parentElement){cv=this.pCv=document.createElement('canvas');cv.setAttribute('aria-hidden','true');cv.style.cssText='position:absolute;pointer-events:none;filter:grayscale(1) contrast(1.25) brightness(0.9);mix-blend-mode:lighten';img.parentElement.appendChild(cv);}
+    const dpr=Math.min(2,window.devicePixelRatio||1),W=B.w+pad*2,H=B.h+pad*2;
+    if(cv.width!==Math.round(W*dpr)){cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);}
+    cv.style.width=W+'px';cv.style.height=H+'px';cv.style.left=(img.offsetLeft-pad)+'px';cv.style.top=(img.offsetTop-pad)+'px';cv.style.transform=img.style.transform;
+    const p=this.pP;
+    if(p<=0){cv.style.display='none';img.style.opacity='';}else{
+      cv.style.display='block';img.style.opacity='0';
+      const ctx=cv.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);ctx.drawImage(img,pad,pad,B.w,B.h);
+      const cs=B.cs,L=B.cells,k=this.pDir==='L'?'dL':'dR',wob=now/700;
+      const ts=this.pTs&&this.pTs.length===L.length?this.pTs:(this.pTs=new Float32Array(L.length));
+      if(p>=0.999)ctx.clearRect(pad,pad,B.w,B.h);
+      for(let i=0;i<L.length;i++){const c=L[i];let t=(p-c[k]*0.45)/0.55;t=t<0?0:t>1?1:t;ts[i]=t;if(t>0&&p<0.999)ctx.clearRect(pad+c.x,pad+c.y,cs,cs);}
+      for(let q=0;q<32;q++){const bk=B.buckets[q];if(!bk.length)continue;ctx.fillStyle=B.cols32[q];
+        for(let j=0;j<bk.length;j++){const i=bk[j],t=ts[i];if(t<=0)continue;const c=L[i];
+          const e=t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2,u=1-e;
+          const x=u*u*c.x+2*u*e*c.qx+e*e*c.tx+Math.sin(wob+c.ph)*2.2*e,y=u*u*c.y+2*u*e*c.qy+e*e*c.ty+Math.cos(wob*1.3+c.ph)*2.2*e;
+          const s=cs*(1-0.25*Math.sin(Math.PI*e));ctx.fillRect(pad+x,pad+y,s,s);}}
+    }
+    if(p!==this.pT||this.pT===1)this.pRaf=requestAnimationFrame(this.pixFrame);else this.pRaf=null;
+  };
+  portrait(){const pi=document.getElementById('cr-portrait-img');if(pi)pi.style.transform='translate3d('+Math.round(-(this.mx||0)*16)+'px,'+Math.round(window.scrollY*0.1-(this.my||0)*10)+'px,0)';}
+  componentWillUnmount(){clearInterval(this.clk);clearTimeout(this.cpt);clearTimeout(this.wt);clearTimeout(this.rt);if(this.ro)this.ro.disconnect();clearTimeout(this.ct);window.removeEventListener('scroll',this.onScroll);window.removeEventListener('resize',this.onResize);if(this.io)this.io.disconnect();if(this.pixOn){window.removeEventListener('mousemove',this.onPixMove);document.removeEventListener('mouseout',this.onPixOut);window.removeEventListener('scroll',this.onPixScroll);cancelAnimationFrame(this.pRaf);}}
+  componentDidUpdate(){const key=this.state.view+(this.state.slug||'');if(this.lastKey!==key){const first=this.lastKey===undefined;this.lastKey=key;if(!first){window.scrollTo(0,0);this.enter();this.a11yNav(true);setTimeout(()=>{this.reveal();this.tick();},80);}}}
+  a11yNav(focus){const v=this.state.view,C=window.CR_CASES||{};const t={home:'Cecile Roca · UX Architect & Researcher, New York',index:'Work · Cecile Roca',about:'About · Cecile Roca',contact:'Contact · Cecile Roca',scv:'Single Client View · Cecile Roca'}[v]||((C[this.state.slug]||{}).title||'Case study')+' · Cecile Roca';document.title=t;if(focus){const m=document.getElementById('main');if(m)m.focus({preventScroll:true});}}
+  parseHash(){const h=location.hash.slice(1);if(h==='scv')this.setState({view:'scv'});else if(h.indexOf('case/')===0)this.setState({view:'case',slug:h.slice(5)});else if(h==='index'||h==='about'||h==='contact')this.setState({view:h});}
+  go(view,slug,filter){const st={view};if(slug!==undefined)st.slug=slug;if(filter)st.filter=filter;this.setState(st);try{history.replaceState(null,'',view==='home'?location.pathname+location.search:'#'+(view==='case'?'case/'+slug:view));}catch(e){}}
+  open(slug){if(slug==='scv')this.go('scv',null);else if(slug==='fab')this.go('index',null,'Fabrication');else this.go('case',slug);}
+  tick(){
+    this.onResize&&this.onResize();
+    const d=document.documentElement,p=d.scrollTop/((d.scrollHeight-d.clientHeight)||1);
+    const bar=document.getElementById('cr-progress');if(bar)bar.style.transform='scaleX('+p+')';
+    this.portrait();
+    const up={};
+    {const hn=document.getElementById('cr-hero-name');let k=1;if(this.state.view==='home'){k=0;if(hn){const top=hn.getBoundingClientRect().top+window.scrollY;k=clamp((window.scrollY-(top-72))/140);}}if(Math.abs(k-(this.state.brandK??-1))>0.02||(k!==this.state.brandK&&(k===0||k===1)))up.brandK=k;}
+    const th=document.getElementById('throughline');
+    if(th){const r=th.getBoundingClientRect();const v=clamp(-r.top/((r.height-window.innerHeight)||1));if(Math.abs(v-this.state.thr)>0.004)up.thr=v;}
+    {const q=document.getElementById('cr-spaces-quote');if(q){const v=clamp((window.innerHeight*0.88-q.getBoundingClientRect().top)/(window.innerHeight*0.4));if(Math.abs(v-(this.state.hlP||0))>0.01||(v!==this.state.hlP&&(v===0||v===1)))up.hlP=v;}}
+    const blocks=document.querySelectorAll('[data-feat]');
+    if(blocks.length){let a=0;blocks.forEach((b,i)=>{if(b.getBoundingClientRect().top<window.innerHeight*0.5)a=i;});if(a!==this.state.feat)up.feat=a;}
+    const ap=document.getElementById('approach');
+    if(ap){const r=ap.getBoundingClientRect();const v=clamp((window.innerHeight*0.75-r.top)/(Math.min(r.height,900)*0.6));if(Math.abs(v-this.state.proc)>0.01)up.proc=v;}
+    if(Object.keys(up).length)this.setState(up);
+  }
+  reveal(){
+    if(this.io)this.io.disconnect();
+    this.io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity=1;e.target.style.transform='none';this.io.unobserve(e.target);}}),{threshold:0.08});
+    document.querySelectorAll('[data-reveal]').forEach(el=>{
+      if(el.dataset.seen)return;el.dataset.seen='1';
+      if(el.getBoundingClientRect().top<window.innerHeight)return;
+      const dl=((+el.dataset.stagger||0)*70)+'ms';el.style.opacity=0;el.style.transform='translateY(28px)';el.style.transition='opacity .9s ease '+dl+', transform .9s cubic-bezier(.2,.7,.2,1) '+dl+', background-color .3s, padding .35s cubic-bezier(.2,.8,.2,1), box-shadow .3s';
+      this.io.observe(el);
+    });
+  }
+  loadRatio(src){this.ld=this.ld||{};if(this.ld[src])return;this.ld[src]=1;const im=new Image();im.onload=()=>this.setState(s=>({ratios:{...(s.ratios||{}),[src]:im.naturalWidth/im.naturalHeight}}));im.src=src;}
+  zv(key,src){
+    this.zrefs=this.zrefs||{};const ref=this.zrefs[key]||(this.zrefs[key]=React.createRef());
+    const z=(this.state.zz||{})[key]||1;
+    const setZ=(nz,px,py)=>{const el=ref.current;nz=Math.max(1,Math.min(8,nz));if(!el){this.setState(s=>({zz:{...(s.zz||{}),[key]:nz}}));return;}if(px==null){px=el.clientWidth/2;py=el.clientHeight/2;}const cx=(el.scrollLeft+px)/z,cy=(el.scrollTop+py)/z;this.setState(s=>({zz:{...(s.zz||{}),[key]:nz}}),()=>{el.scrollLeft=cx*nz-el.clientWidth/2;el.scrollTop=cy*nz-el.clientHeight/2;});};
+    const d=(this.zd||{})[key];
+    return{ref,src,full:src,onScroll:()=>this.miniTick(),mini:this.mini(ref.current,z,src),w:(z*100)+'%',img:React.createElement('img',{src,alt:'',draggable:false,style:{display:'block',width:(z*100)+'%',maxWidth:'none',height:'auto'}}),pct:Math.round(z*100)+'%',cur:z>1?(d&&d.moved?'grabbing':'zoom-out'):'zoom-in',
+      zin:()=>setZ(z*1.5),zout:()=>setZ(z/1.5),reset:()=>setZ(1),
+      down:e=>{const el=ref.current;this.zd=this.zd||{};this.zd[key]={x:e.clientX,y:e.clientY,l:el.scrollLeft,t:el.scrollTop,moved:false};},
+      move:e=>{const d=(this.zd||{})[key];if(!d||e.pointerType!=='mouse'||z<=1)return;const dx=e.clientX-d.x,dy=e.clientY-d.y;if(!d.moved&&Math.hypot(dx,dy)<5)return;if(!d.moved){d.moved=true;this.forceUpdate();}const el=ref.current;el.scrollLeft=d.l-dx;el.scrollTop=d.t-dy;},
+      up:e=>{const d=(this.zd||{})[key];if(!d)return;this.zd[key]=null;if(d.moved){this.forceUpdate();return;}if(e.type==='pointerleave')return;const el=ref.current;const r=el.getBoundingClientRect();const px=e.clientX-r.left,py=e.clientY-r.top;if(z>1.05){setZ(1,px,py);return;}const img=el.querySelector('img');const read=img&&img.naturalWidth?img.naturalWidth/el.clientWidth:3;setZ(Math.max(3,Math.min(8,read*1.1)),px,py);}};
+  }
+  caseVals(slug){
+    const C=window.CR_CASES||{};const c=C[slug];if(!c)return{};
+    const chapters=(c.chapters||[]).map((ch,i)=>{const imgs=ch.imgs||[];const mode=ch.mode||'';const flow=!mode&&imgs.length&&(ch.zoom||/flow/i.test(imgs[0][1]));return{fh:ch.fh||'560px',
+      n:String(i+1).padStart(2,'0'),k:ch.k,t:ch.t,body:(ch.body||[]).map(p=>({p})),
+      hasBullets:!!(ch.bullets&&ch.bullets.length),bullets:(ch.bullets||[]).map((t,j)=>({t,n:String(j+1).padStart(2,'0')})),
+      hasImgs:imgs.length>0,imgs:imgs.map(([src,cap,bare])=>({bg:'url("'+src+'")',src,cap,plain:!flow&&!mode,zoom:!!flow,wide:mode==='wide'&&!bare,bare:mode==='wide'&&!!bare,scroll:mode==='scroll',hint:mode==='scroll'?'Scroll ↕':(mode==='wide'?'Click to enlarge':''),open:()=>this.setState({lb:{src,cap}}),...(flow?this.zv(src,src):{})})),
+      minCol:ch.minCol||(imgs.length===1||flow?'100%':(imgs.length===3?'300px':'420px')),ratio:flow?'21/9':'16/10',cropAr:ch.match?'auto':(ch.crop||'auto'),fit:'cover',fitBg:'transparent',cols:ch.match&&this.state.wide?ch.match.map(r=>'minmax(0,'+r+'fr)').join(' '):'repeat(auto-fit,minmax(min(100%,'+(ch.minCol||(imgs.length===1||flow?'100%':(imgs.length===3?'300px':'420px')))+'),1fr))',
+      hasPh:!!ch.ph&&!ch.video,ph:ch.ph||'',hasVideo:!!ch.video,video:ch.video?'https://player.vimeo.com/video/'+ch.video+'?title=0&byline=0&portrait=0':'',videoCap:ch.videoCap||'',slot:slug+'-'+(i+1)};});
+    const nx=c.next==='scv'?SCV:C[c.next]||{};
+    const lb=this.state.lb,lbZ=this.state.lbZ;return{lbImg:lb?React.createElement('img',{src:lb.src,alt:lb.cap,draggable:false,onPointerDown:this.lbDown,onPointerMove:this.lbMove,onPointerUp:this.lbUp,style:{display:'block',width:lbZ?lbZ+'px':'auto',maxWidth:lbZ?'none':'min(100%, calc(100vw - 80px))',maxHeight:lbZ?'none':'calc(100vh - 140px)',height:'auto',margin:'0 auto',borderRadius:4,cursor:lbZ?(this._lbd&&this._lbd.moved?'grabbing':'zoom-out'):'zoom-in',userSelect:'none'}}):null,lbRef:this.lbRef,lbScroll:()=>this.miniTick(),lbm:lb&&lbZ?this.mini(this.lbRef.current,2,lb.src):{on:false},lbMax:lbZ?'none':'1600px',lbHint:lbZ?'click to zoom out, drag to move':'click any area to zoom in',lbOn:!!lb,lbSrc:lb?lb.src:'',lbCap:lb?lb.cap:'',lbClose:()=>this.setState({lb:null,lbZ:null}),lbStop:e=>e.stopPropagation(),c:{slug,heroPos:c.heroPos||'center',hasMetrics:!!(c.metrics&&c.metrics.length),title:c.title,kicker:c.kicker,client:c.client,h1a:c.h1a,h1b:c.h1b,dek:c.dek,meta:c.meta.map(([k,v])=>({k,v})),hasHero:!!c.hero&&!c.heroZoom,noHero:!c.hero,heroBg:c.hero?'url("'+c.hero+'")':'none',hasHeroZoom:!!(c.hero&&c.heroZoom),hz:c.hero&&c.heroZoom?{bg:'url("'+c.hero+'")',cap:c.title,...this.zv('hero-'+slug,c.hero)}:{},heroLabel:c.heroLabel||'',catColor:CC[c.cat]||'#BD431B',metrics:c.metrics.map(([v,l])=>({v,l})),chapters},
+      nextTitle:nx.title,nextShort:nx.short,goNext:()=>this.open(c.next)};
+  }
+  navVals(slug){
+    const C=window.CR_CASES||{};const all={...C,scv:SCV};const cur=all[slug]||{};
+    const ord=(window.CR_ORDER||['scv']).concat((window.CR_EXTRA||[]).map(e=>e[5])).filter((k,j,A)=>all[k]&&A.indexOf(k)===j);const i=ord.indexOf(slug),L=ord.length;
+    const nk=i<0?null:ord[(i+1)%L],pk=i<0?null:ord[(i-1+L)%L];const nx=all[nk]||{};
+    return{nextTitle:nx.title||'',nextShort:nx.short||'',goNext:()=>nk&&this.open(nk),hasPrev:!!pk,prevTitle:pk?all[pk].title:'',goPrev:()=>pk&&this.open(pk),
+      cats:CATS.slice(1).map(k=>({label:k,dot:CC[k],bg:k===cur.cat?CC[k]:'transparent',bd:k===cur.cat?CC[k]:'#4A473E',go:()=>this.go('index',null,k)}))};
+  }
+  contactVals(){
+    const T=[['A project','Project inquiry'],['A role','Role opportunity'],['Speaking','Speaking invitation'],['Just saying hi','Hello from your portfolio']];
+    const ti=this.state.topic||0,subject=T[ti][1],cp=!!this.state.copied;
+    let nycTime='';try{nycTime=new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'});}catch(e){}
+    return{subject,nycTime,cardCols:this.state.wide||window.innerWidth>=760?'repeat(3,minmax(0,1fr))':'minmax(0,1fr)',mailHref:'mailto:cecile@cecileroca.com?subject='+encodeURIComponent(subject),
+      gmailHref:'https://mail.google.com/mail/?view=cm&fs=1&to=cecile@cecileroca.com&su='+encodeURIComponent(subject),
+      outlookHref:'https://outlook.live.com/mail/0/deeplink/compose?to=cecile@cecileroca.com&subject='+encodeURIComponent(subject),
+      openMail:e=>{const h=e.currentTarget.getAttribute('href');e.preventDefault();let w=null;try{w=window.open(h,'_blank');}catch(x){}if(!w){try{window.top.location.href=h;}catch(x){window.location.href=h;}}},
+      topics:T.map(([label],i)=>({label,on:i===ti?'true':'false',pick:()=>this.setState({topic:i}),bg:i===ti?'#16150F':'transparent',fg:i===ti?'#F4F1EA':'#16150F',bd:i===ti?'#16150F':'#BDB6A6'})),
+      copyLabel:cp?'Copied ✓':'Copy address',copyBg:cp?'#F4F1EA':'transparent',copyFg:cp?'#BD431B':'#F4F1EA',
+      copyEmail:e=>{e.preventDefault();e.stopPropagation();const v='cecile@cecileroca.com';const done=()=>{this.setState({copied:true});clearTimeout(this.cpt);this.cpt=setTimeout(()=>this.setState({copied:false}),1800);};
+        if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(v).then(done,()=>{this.fallbackCopy(v);done();});else{this.fallbackCopy(v);done();}},
+      cardMove:e=>{if(e.pointerType==='touch')return;const el=e.currentTarget,r=el.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-0.5,y=(e.clientY-r.top)/r.height-0.5;
+        el.style.transform='perspective(1000px) rotateY('+(x*8)+'deg) rotateX('+(-y*8)+'deg) translateY(-6px)';el.style.boxShadow='0 28px 56px rgba(22,21,15,0.2)';const a=el.querySelector('[data-arrow]');if(a)a.style.transform='rotate(0deg) scale(1.08)';},
+      cardLeave:e=>{const el=e.currentTarget;el.style.transform='none';el.style.boxShadow='none';const a=el.querySelector('[data-arrow]');if(a)a.style.transform='rotate(-45deg)';}};
+  }
+  fallbackCopy(v){try{const t=document.createElement('textarea');t.value=v;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();}catch(e){}}
+  renderVals(){
+    const {view,slug,thr,feat,proc,wide,coverIn,shot,layer,filter,hov,px,py}=this.state;
+    const C=window.CR_CASES||{};
+    const e=ease(clamp((thr-0.34)/0.36));
+    const cnt={L:0,O:0,R:0};
+    const chips=CH.map(([label,g],i)=>{const k=cnt[g]++;const cx=3+rnd(i)*66,cy=8+rnd(i+40)*80,cr=(rnd(i+80)-0.5)*44;const tx=COLX[g],ty=17+k*14.5;const done=e>0.85;
+      return{label,x:(cx+(tx-cx)*e)+'%',y:(cy+(ty-cy)*e)+'%',t:'rotate('+(cr*(1-e))+'deg)',bg:done?(k===0?'#16150F':'#FBFAF6'):'#E4DFD3',fg:done?(k===0?'#F4F1EA':'#16150F'):'#5E5A50',bd:done?'#16150F':'#CFC8B8'};});
+    const band=(a,b,c2,d2)=>thr<a?0:thr<b?(thr-a)/(b-a):thr<c2?1:thr<d2?1-(thr-c2)/(d2-c2):0;
+    const o1=thr<0.16?1:thr<0.26?1-(thr-0.16)/0.1:0,o2=band(0.24,0.32,0.5,0.58),o3=thr<0.58?0:clamp((thr-0.58)/0.1);
+    const seg=thr<0.26?0:thr<0.58?1:2;
+    const idx=[];
+    CATS;const order=window.CR_ORDER||['scv'];
+    order.forEach(s=>{const c=s==='scv'?SCV:C[s];if(c)idx.push({slug:s,title:c.title,sub:c.short,client:c.client,cat:c.cat});});
+    (window.CR_EXTRA||[]).forEach(x=>idx.push({title:x[0],sub:x[1],client:x[2],cat:x[3],url:x[4],slug:x[5]}));
+    const work=idx.map((w,i)=>({...w,i})).filter(w=>filter==='All'||w.cat===filter).map(w=>{const internal=!!w.slug;return{
+      n:String(w.i+1).padStart(2,'0'),title:w.title,sub:w.sub,client:w.client,cat:w.slug==='scv'?'Lead case study':w.cat,...(()=>{const col=CC[w.cat]||'#16150F';const on=hov===(internal?w.slug:'ext:'+w.title);return{catColor:on?'#F4F1EA':col,bg:on?col:'transparent',fg:on?'#F4F1EA':'#16150F',mut:on?'#F4F1EA':'#5E5A50',mid:on?'#F4F1EA':'#34322B',pl:on?'24px':'0px'};})(),
+      href:internal?'#':w.url,target:internal?'_self':'_blank',arrow:internal?'→':'↗',
+      onClick:internal?(ev=>{ev.preventDefault();this.open(w.slug);}):(()=>{}),
+      enter:()=>this.setState({hov:internal?w.slug:'ext:'+w.title})};});
+    const hasPv=hov&&PV.includes(hov);
+    const pv={none:hov&&!hasPv?'flex':'none'};PV.forEach(k=>pv[k]=hov===k?'block':'none');
+    const sk=layer==='sketch';
+    const fm=i=>({o:feat===i?1:0,t:feat===i?'scale(1)':'scale(1.06)'});
+    const goto=v=>ev=>{ev&&ev.preventDefault&&ev.preventDefault();this.go(v,null,v==='index'?'All':undefined);};
+    return{
+      isHome:view==='home',isScv:view==='scv',isGen:view==='case'&&!!C[slug],isIndex:view==='index',isAbout:view==='about',isContact:view==='contact',notContact:view!=='contact',
+      ...this.contactVals(),
+      ...(view==='case'?this.caseVals(slug):{}),
+      nav:view==='case'||view==='scv'?this.navVals(view==='scv'?'scv':slug):{},
+      ...this.flowVals(),
+      ...(()=>{const k=view==='home'?(this.state.brandK??0):1;return{brandO:k,brandT:'translateY('+((1-k)*8)+'px)',brandPE:k>0.5?'auto':'none',heroNameO:1-k,heroNameT:'translate('+(-k*8)+'px,'+(-k*24)+'px) scale('+(1-k*0.25)+')'};})(),
+      betaSpan:this.state.betaSpan||'1 / -1',hlA:((this.state.hlP||0)*100).toFixed(1)+'% 34%',hlO:(this.state.hlP||0)>0.96?1:0,hlT:(this.state.hlP||0)>0.96?'none':'translateY(12px)',
+      coverClip:coverIn?'inset(0% 0% 0% 0%)':'inset(100% 0% 0% 0%)',nameT1:coverIn?'translateY(0)':'translateY(105%)',nameT2:coverIn?'translateY(0)':'translateY(105%)',
+      coverMove:e=>{if(e.pointerType==='touch')return;const b=e.currentTarget.getBoundingClientRect();const x=e.clientX-b.left,y=e.clientY-b.top;this.mx=x/b.width-0.5;this.my=y/b.height-0.5;this.portrait();const g=document.getElementById('cr-glow');if(g){g.style.opacity=1;g.style.transform='translate('+(x-320)+'px,'+(y-320)+'px)';}const m=document.getElementById('cr-magnet');if(m){const r=m.parentNode.getBoundingClientRect();const dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2);m.style.transform=Math.hypot(dx,dy)<150?'translate('+(dx*0.35)+'px,'+(dy*0.35)+'px)':'none';}},
+      coverLeave:()=>{this.mx=0;this.my=0;this.portrait();const g=document.getElementById('cr-glow');if(g)g.style.opacity=0;const m=document.getElementById('cr-magnet');if(m)m.style.transform='none';},
+      tiltMove:e=>{const el=e.currentTarget,r=el.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-0.5,y=(e.clientY-r.top)/r.height-0.5;const c=el.querySelector('[data-tilt]'),f=el.querySelector('[data-frame]');if(c)c.style.transform='perspective(900px) rotateY('+(x*9)+'deg) rotateX('+(-y*9)+'deg)';if(f)f.style.transform='translate('+(14-x*22)+'px,'+(14-y*22)+'px)';},
+      tiltLeave:e=>{const el=e.currentTarget;const c=el.querySelector('[data-tilt]'),f=el.querySelector('[data-frame]');if(c)c.style.transform='none';if(f)f.style.transform='translate(14px,14px)';},
+      goThrough:ev=>{ev.preventDefault();const t=document.getElementById('throughline');if(t)window.scrollTo({top:t.offsetTop+10,behavior:'smooth'});},
+      t1o:o1,t2o:o2,t3o:o3,t1t:'translateY('+((1-o1)*-16)+'px)',t2t:'translateY('+((1-o2)*(thr<0.4?16:-16))+'px)',t3t:'translateY('+((1-o3)*16)+'px)',
+      dashes:[0,1,2].map(i=>({w:i===seg?'36px':'14px',c:i<=seg?'#BD431B':'#CFC8B8'})),
+      chips,heads:[['Legal','L'],['Operational','O'],['Relationships','R']].map(([label,g])=>({label,x:COLX[g]+'%',o:e>0.8?1:0})),
+      fieldCaption:e<0.5?'Before · one client, scattered across 8 systems':'After · one client, three clear perspectives',
+      wide,narrow:!wide,coverCols:wide?'minmax(0,1fr) minmax(0,0.92fr)':'minmax(0,1fr)',
+      feats:FEAT.map((f,i)=>({...f,o:!wide||feat===i?1:0.28,m:f.m.map(([v,l])=>({v,l})),open:()=>this.open(f.slug),bgi:'url("'+f.img+'")'})),
+      fm0:fm(0),fm1:fm(1),fm2:fm(2),featCap:FEAT[feat].cap,featNum:FEAT[feat].n,openFeat:()=>this.open(FEAT[feat].slug),
+      last:(()=>{const on=proc>=5.4/6;return{o:on?1:0.28,t:on?'none':'translateY(10px)',bg:on?'#E8764F':'transparent',fg:on?'#16150F':'#F4F1EA',dot:on?'#F4F1EA':'#16150F',glow:on?'0 0 0 6px rgba(232,118,79,0.25)':'none'};})(),
+      stepCols:wide?'repeat(5,minmax(0,1fr)) minmax(0,1.15fr)':'repeat(auto-fit,minmax(min(100%,170px),1fr))',
+      heroImgW:wide?'64%':'100%',heroWide:wide,heroNarrow:!wide,heroMask:wide?'radial-gradient(ellipse 50% 74% at 50% 42%,#000 34%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.15) 86%,transparent 100%)':'linear-gradient(to bottom,#000 25%,transparent 70%)',
+      steps:STEPS.slice(0,5).map(([wk,title,body],i)=>{const on=proc>=(i+0.4)/6;return{wk,title,body,o:on?1:0.28,t:on?'none':'translateY(10px)',dot:on?'#E8764F':'#16150F'};}),
+      procPct:(proc*100)+'%',
+      spaces:SPACES.map(s=>({...s,bgi:'url("'+s.img+'")',open:()=>this.open(s.slug)})),
+      railPrev:()=>{const r=document.getElementById('cr-rail');if(r)r.scrollBy({left:-420,behavior:'smooth'});},
+      railNext:()=>{const r=document.getElementById('cr-rail');if(r)r.scrollBy({left:420,behavior:'smooth'});},
+      shots:SHOTS.map(([label],i)=>({label,on:i===shot?'true':'false',pick:()=>this.setState({shot:i}),bg:i===shot?'#16150F':'transparent',fg:i===shot?'#F4F1EA':'#16150F',bd:i===shot?'#16150F':'#BDB6A6'})),
+      shotVis:Object.fromEntries(SHOTS.flatMap((x,i)=>[['s'+i,i===shot&&sk?'block':'none'],['w'+i,i===shot&&!sk?'block':'none']])),
+      skOn:sk?'true':'false',wireOn:sk?'false':'true',showSketch:()=>this.setState({layer:'sketch'}),showWire:()=>this.setState({layer:'wire'}),
+      sketchBg:sk?'#16150F':'transparent',sketchFg:sk?'#F4F1EA':'#16150F',wireBg:sk?'transparent':'#16150F',wireFg:sk?'#16150F':'#F4F1EA',
+      filters:CATS.map(c=>({label:c,on:c===filter?'true':'false',n:c==='All'?idx.length:idx.filter(w=>w.cat===c).length,pick:()=>this.setState({filter:c},()=>this.enter()),bg:c===filter?(CC[c]||'#16150F'):'transparent',fg:c===filter?'#F4F1EA':'#16150F',bd:c===filter?(CC[c]||'#16150F'):'#BDB6A6',dot:CC[c]||'transparent',dotD:CC[c]?'block':'none'})),
+      work,pv,pvLabel:hov&&hov.indexOf('ext:')===0?hov.slice(4):'Imagery coming',
+      pvX:(px+28)+'px',pvY:(py-100)+'px',pvO:hov&&wide?1:0,pvT:hov?'scale(1) rotate(-2deg)':'scale(0.9) rotate(0deg)',
+      onIdxMove:ev=>{if(!this.mr){this.mr=requestAnimationFrame(()=>{this.mr=null;});this.setState({px:ev.clientX,py:ev.clientY});}},
+      idxLeave:()=>this.setState({hov:null}),
+      idxCols:wide?'40px minmax(0,2.2fr) minmax(0,1.1fr) minmax(0,1fr) 28px':'32px minmax(0,1fr) 20px',idxShow:wide?'block':'none',roomCols:wide?'48px minmax(0,1fr) minmax(0,520px)':'32px minmax(0,1fr)',roomSpan:wide?'auto':'2',
+      keyAct:e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();e.currentTarget.click();}},
+      skipMain:e=>{e.preventDefault();const m=document.getElementById('main');if(m)m.focus();},
+      goHome:goto('home'),goIndex:goto('index'),goAbout:goto('about'),goContact:goto('contact'),goChoro:ev=>{ev&&ev.preventDefault&&ev.preventDefault();this.open('choro');}
+    };
+  }
+}
+</script>
+</body>
+</html>
