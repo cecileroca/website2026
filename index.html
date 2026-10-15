@@ -9,7 +9,7 @@
 <meta property="og:description" content="UX architecture and research for enterprise and AI products and immersive physical experiences.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.cecileroca.com/">
-<meta property="og:image" content="https://www.cecileroca.com/assets/portrait-hero-hd.jpg">
+<meta property="og:image" content="https://www.cecileroca.com/assets/CecileRocaPhoto-hero.jpg">
 <link rel="canonical" href="https://www.cecileroca.com/">
 <script src="./vendor/react.production.min.js"></script>
 <script src="./vendor/react-dom.production.min.js"></script>
@@ -57,7 +57,7 @@ main:focus{outline:none}
 <main id="main" tabindex="-1">
 <section data-screen-label="Cover" onMouseMove="{{ coverMove }}" onMouseLeave="{{ coverLeave }}" style="background:#0E0D0A;color:#F4F1EA;position:relative;display:flex;min-height:max(640px,calc(100vh - 57px));overflow:hidden;isolation:isolate">
   <div style="position:absolute;inset:0;background:#0E0D0A;clip-path:{{ coverClip }};transition:clip-path 1.4s cubic-bezier(.7,0,.2,1)">
-    <sc-if value="{{ heroWide }}" hint-placeholder-val="{{ true }}"><img id="cr-portrait-img" src="assets/portrait-hero-hd.jpg" alt="Portrait of Cecile Roca" style="position:absolute;right:0;bottom:0;width:auto;height:auto;max-width:min(976px,{{ heroImgW }});max-height:100%;display:block;filter:grayscale(1) contrast(1.25) brightness(0.9);mix-blend-mode:lighten;transition:transform .7s cubic-bezier(.2,.8,.2,1)"></sc-if>
+    <sc-if value="{{ heroWide }}" hint-placeholder-val="{{ true }}"><img id="cr-portrait-img" src="assets/CecileRocaPhoto-hero.jpg" alt="Portrait of Cecile Roca" style="position:absolute;right:0;bottom:0;width:auto;height:auto;max-width:min(976px,{{ heroImgW }});max-height:100%;display:block;filter:grayscale(1);mix-blend-mode:lighten;transition:transform .7s cubic-bezier(.2,.8,.2,1)"></sc-if>
   </div>
   <div id="cr-glow" style="position:absolute;left:0;top:0;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(232,118,79,0.18) 0%,rgba(232,118,79,0.06) 35%,rgba(232,118,79,0) 62%);pointer-events:none;z-index:1;opacity:0;transition:opacity .6s ease,transform .55s cubic-bezier(.2,.8,.2,1);mix-blend-mode:screen"></div>
   <div style="position:relative;z-index:2;flex:1;width:100%;max-width:1440px;margin:0 auto;padding:clamp(24px,3.4vw,44px) clamp(20px,4vw,48px) clamp(32px,4.4vw,60px);display:flex;flex-direction:column;justify-content:space-between;gap:48px">
@@ -72,7 +72,7 @@ main:focus{outline:none}
         <span style="padding-left:17px">Now: AI &amp; financial platforms at Synechron</span>
       </div>
     </div>
-    <sc-if value="{{ heroNarrow }}" hint-placeholder-val="{{ false }}"><img src="assets/portrait-hero-hd.jpg" alt="Portrait of Cecile Roca" style="display:block;align-self:center;width:calc(100% + 40px);max-width:600px;height:auto;margin:-24px -20px -20px;filter:grayscale(1) contrast(1.25) brightness(0.9);mix-blend-mode:lighten;opacity:{{ heroNameO }};transition:opacity 1s ease .6s"></sc-if>
+    <sc-if value="{{ heroNarrow }}" hint-placeholder-val="{{ false }}"><img src="assets/CecileRocaPhoto-hero.jpg" alt="Portrait of Cecile Roca" style="display:block;align-self:center;width:calc(100% + 40px);max-width:600px;height:auto;margin:-24px -20px -20px;filter:grayscale(1);mix-blend-mode:lighten;opacity:{{ heroNameO }};transition:opacity 1s ease .6s"></sc-if>
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap">
       <div style="display:flex;flex-direction:column;gap:clamp(20px,2.2vw,28px);max-width:640px;flex:1 1 420px">
         <p data-in="rise:1200" style="margin:0;font-family:'Instrument Serif',serif;font-size:clamp(40px,4.4vw,68px);line-height:1;letter-spacing:-0.015em;text-wrap:balance">Taking chaos to funded to <em style="color:#E8764F;position:relative;display:inline-block">shipped.<span data-in="line:1950" style="position:absolute;left:0.04em;right:0.28em;bottom:0.04em;height:3px;border-radius:2px;background:#E8764F;transform-origin:0 50%"></span></em></p>
@@ -596,7 +596,7 @@ main:focus{outline:none}
       <h1 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(48px,6.4vw,96px);line-height:0.95;letter-spacing:-0.02em;text-wrap:balance"><span data-in="word:120" style="display:inline-block">From</span> <span data-in="word:190" style="display:inline-block">contracts</span> <span data-in="word:260" style="display:inline-block">to</span> <span data-in="word:330" style="display:inline-block">kinetic</span> <span data-in="word:400" style="display:inline-block">sculpture</span> <span data-in="word:470" style="display:inline-block">to</span> <span data-in="word:540" style="display:inline-block"><em style="color:#BD431B">AI.</em></span></h1>
       <p data-in="rise:750" style="margin:0;font-size:18px;line-height:1.6;color:#34322B;max-width:560px;text-wrap:pretty">UX architect and senior experience designer in New York, turning complex, regulated systems into clear, compliant, intuitive products. The method: strict logic and regulation, balanced with business strategy and empathy for the people who use them.</p>
     </div>
-    <div onMouseMove="{{ tiltMove }}" onMouseLeave="{{ tiltLeave }}" style="position:relative;max-width:440px;width:100%;justify-self:end"><div data-frame="1" data-in="fade:1100" style="position:absolute;inset:0;border:1px solid #BD431B;border-radius:6px;transform:translate(14px,14px);transition:transform .5s cubic-bezier(.2,.8,.2,1);pointer-events:none"></div><div data-tilt="1" style="position:relative;transition:transform .5s cubic-bezier(.2,.8,.2,1)"><div data-in="wipe:250" style="aspect-ratio:4/5;border-radius:6px;overflow:hidden;background:#F4F1EA;isolation:isolate"><img data-in="zoom:250" src="assets/portrait-about.jpeg" alt="Cecile Roca" style="width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block"></div></div></div>
+    <div onMouseMove="{{ tiltMove }}" onMouseLeave="{{ tiltLeave }}" style="position:relative;max-width:440px;width:100%;justify-self:end"><div data-frame="1" data-in="fade:1100" style="position:absolute;inset:0;border:1px solid #BD431B;border-radius:6px;transform:translate(14px,14px);transition:transform .5s cubic-bezier(.2,.8,.2,1);pointer-events:none"></div><div data-tilt="1" style="position:relative;transition:transform .5s cubic-bezier(.2,.8,.2,1)"><div data-in="wipe:250" style="aspect-ratio:4/5;border-radius:6px;overflow:hidden;background:#F4F1EA;isolation:isolate"><img data-in="zoom:250" src="assets/portrait-about-cropped.jpg" alt="Cecile Roca" style="width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block"></div></div></div>
   </section>
 
   <section style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,120px) clamp(20px,4vw,48px) 0">
