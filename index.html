@@ -491,6 +491,9 @@ main:focus{outline:none}
           <sc-for list="{{ ch.body }}" as="b" hint-placeholder-count="1">
             <p style="margin:0;font-size:17px;line-height:1.65;color:#34322B;text-wrap:pretty">{{ b.p }}</p>
           </sc-for>
+          <sc-if value="{{ ch.hasCta }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ ch.ctaHref }}" target="_blank" rel="noopener" style="align-self:flex-start;margin-top:4px;padding:14px 24px;border-radius:999px;font-size:15px;background:#16150F;color:#F4F1EA;white-space:nowrap;transition:background-color .25s,transform .25s" style-hover="background:{{ c.catColor }};transform:translateY(-2px)" style-active="transform:scale(0.97)">{{ ch.ctaLabel }}</a>
+          </sc-if>
           <sc-if value="{{ ch.hasBullets }}" hint-placeholder-val="{{ false }}">
             <div style="display:flex;flex-direction:column;border-top:1px solid #D9D3C5">
               <sc-for list="{{ ch.bullets }}" as="bl" hint-placeholder-count="3">
@@ -527,6 +530,9 @@ main:focus{outline:none}
             </figure>
           </sc-for>
         </div>
+      </sc-if>
+      <sc-if value="{{ ch.hasMp4 }}" hint-placeholder-val="{{ false }}">
+        <figure style="margin:40px 0 0;display:flex;flex-direction:column;gap:10px"><div style="position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#16150F"><video src="{{ ch.mp4 }}" poster="{{ ch.poster }}" controls="true" preload="none" playsinline="true" aria-label="{{ ch.videoCap }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#16150F"></video></div><figcaption style="font-family:'Geist Mono',monospace;font-size:11.5px;color:#5E5A50">{{ ch.videoCap }}</figcaption></figure>
       </sc-if>
       <sc-if value="{{ ch.hasVideo }}" hint-placeholder-val="{{ false }}">
         <figure style="margin:40px 0 0;display:flex;flex-direction:column;gap:10px"><div style="position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#16150F"><iframe src="{{ ch.video }}" title="{{ ch.videoCap }}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="true" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div><figcaption style="font-family:'Geist Mono',monospace;font-size:11.5px;color:#5E5A50">{{ ch.videoCap }}</figcaption></figure>
@@ -955,7 +961,7 @@ class Component extends DCLogic {
       hasBullets:!!(ch.bullets&&ch.bullets.length),bullets:(ch.bullets||[]).map((t,j)=>({t,n:String(j+1).padStart(2,'0')})),
       hasImgs:imgs.length>0,imgs:imgs.map(([src,cap,bare])=>({bg:'url("'+src+'")',src,cap,plain:!flow&&!mode,zoom:!!flow,wide:mode==='wide'&&!bare,bare:mode==='wide'&&!!bare,scroll:mode==='scroll',hint:mode==='scroll'?'Scroll ↕':(mode==='wide'?'Click to enlarge':''),open:()=>this.setState({lb:{src,cap}}),...(flow?this.zv(src,src):{})})),
       minCol:ch.minCol||(imgs.length===1||flow?'100%':(imgs.length===3?'300px':'420px')),ratio:flow?'21/9':'16/10',cropAr:ch.match?'auto':(ch.crop||'auto'),fit:'cover',fitBg:'transparent',cols:ch.match&&this.state.wide?ch.match.map(r=>'minmax(0,'+r+'fr)').join(' '):'repeat(auto-fit,minmax(min(100%,'+(ch.minCol||(imgs.length===1||flow?'100%':(imgs.length===3?'300px':'420px')))+'),1fr))',
-      hasPh:!!ch.ph&&!ch.video,ph:ch.ph||'',hasVideo:!!ch.video,video:ch.video?'https://player.vimeo.com/video/'+ch.video+'?title=0&byline=0&portrait=0':'',videoCap:ch.videoCap||'',slot:slug+'-'+(i+1)};});
+      hasPh:!!ch.ph&&!ch.video&&!ch.mp4,hasMp4:!!ch.mp4,mp4:ch.mp4||'',poster:ch.poster||'',hasCta:!!ch.cta,ctaLabel:ch.cta?ch.cta[0]:'',ctaHref:ch.cta?ch.cta[1]:'',ph:ch.ph||'',hasVideo:!!ch.video,video:ch.video?'https://player.vimeo.com/video/'+ch.video+'?title=0&byline=0&portrait=0':'',videoCap:ch.videoCap||'',slot:slug+'-'+(i+1)};});
     const nx=c.next==='scv'?SCV:C[c.next]||{};
     const lb=this.state.lb,lbZ=this.state.lbZ;return{lbImg:lb?React.createElement('img',{src:lb.src,alt:lb.cap,draggable:false,onPointerDown:this.lbDown,onPointerMove:this.lbMove,onPointerUp:this.lbUp,style:{display:'block',width:lbZ?lbZ+'px':'auto',maxWidth:lbZ?'none':'min(100%, calc(100vw - 80px))',maxHeight:lbZ?'none':'calc(100vh - 140px)',height:'auto',margin:'0 auto',borderRadius:4,cursor:lbZ?(this._lbd&&this._lbd.moved?'grabbing':'zoom-out'):'zoom-in',userSelect:'none'}}):null,lbRef:this.lbRef,lbScroll:()=>this.miniTick(),lbm:lb&&lbZ?this.mini(this.lbRef.current,2,lb.src):{on:false},lbMax:lbZ?'none':'1600px',lbHint:lbZ?'click to zoom out, drag to move':'click any area to zoom in',lbOn:!!lb,lbSrc:lb?lb.src:'',lbCap:lb?lb.cap:'',lbClose:()=>this.setState({lb:null,lbZ:null}),lbStop:e=>e.stopPropagation(),c:{slug,heroPos:c.heroPos||'center',hasMetrics:!!(c.metrics&&c.metrics.length),title:c.title,kicker:c.kicker,client:c.client,h1a:c.h1a,h1b:c.h1b,dek:c.dek,meta:c.meta.map(([k,v])=>({k,v})),hasHero:!!c.hero&&!c.heroZoom,noHero:!c.hero,heroBg:c.hero?'url("'+c.hero+'")':'none',hasHeroZoom:!!(c.hero&&c.heroZoom),hz:c.hero&&c.heroZoom?{bg:'url("'+c.hero+'")',cap:c.title,...this.zv('hero-'+slug,c.hero)}:{},heroLabel:c.heroLabel||'',catColor:CC[c.cat]||'#BD431B',metrics:c.metrics.map(([v,l])=>({v,l})),chapters},
       nextTitle:nx.title,nextShort:nx.short,goNext:()=>this.open(c.next)};
