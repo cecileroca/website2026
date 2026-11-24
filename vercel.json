@@ -23,8 +23,13 @@
   "redirects": [
     {
       "source": "/assets/Cecile-Roca-Resume.pdf",
-      "destination": "/assets/CECILE_ROCA_2026.pdf",
-      "permanent": true
+      "destination": "/assets/CECILE_ROCA_2026-11.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/assets/CECILE_ROCA_2026.pdf",
+      "destination": "/assets/CECILE_ROCA_2026-11.pdf",
+      "permanent": false
     }
   ]
 }
